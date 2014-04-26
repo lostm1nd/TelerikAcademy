@@ -1,0 +1,94 @@
+html, body, div, hgroup, h1, h2, h3, p, a, span {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px;
+}
+
+#wrapper {
+  width: 960px;
+}
+#wrapper > div {
+  width: 140px;
+  float: left;
+  margin-top: 20px;
+  padding: 10px 4px;
+}
+#wrapper > div hgroup {
+  display: block;
+  background-image: url(imgs/install.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  margin-bottom: 16px;
+}
+#wrapper > div hgroup h2, #wrapper > div hgroup h3 {
+  font-size: 1em;
+  margin-left: 40px;
+  display: inline-block;
+}
+#wrapper > div:first-child {
+  margin-left: 20px;
+  border-left: 2px solid #D3D7DA;
+}
+#wrapper > div:nth-child(2) hgroup {
+  background-image: url(imgs/tuneUp.png);
+}
+#wrapper > div:nth-child(3) hgroup {
+  background-image: url(imgs/manage.png);
+}
+#wrapper > div:nth-child(4) hgroup {
+  background-image: url(imgs/openSource.png);
+}
+#wrapper > div:nth-child(4) hgroup h2 {
+  margin-top: 20px;
+}
+#wrapper > div:nth-child(5) hgroup {
+  background-image: url(imgs/twitter.png);
+}
+#wrapper > div:nth-child(5) hgroup h2 {
+  margin-top: 20px;
+}
+#wrapper > div:nth-child(6) hgroup {
+  background-image: url(imgs/about.png);
+}
+#wrapper > div:nth-child(6) hgroup h2 {
+  margin-top: 20px;
+}
+#wrapper > div:nth-child(odd) {
+  height: 240px;
+  border-top: 2px solid #D3D7DA;
+  border-bottom: 2px solid #D3D7DA;
+}
+#wrapper > div:nth-child(even) {
+  height: 260px;
+  border: 2px solid #D3D7DA;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, white 0%, #f1f2f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f2f3));
+  background: -webkit-linear-gradient(top, white 0%, #f1f2f3 100%);
+  background: -o-linear-gradient(top, white 0%, #f1f2f3 100%);
+  background: -ms-linear-gradient(top, white 0%, #f1f2f3 100%);
+  background: linear-gradient(to bottom, white 0%, #f1f2f3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f1f2f3',GradientType=0 );
+}
+#wrapper > div div {
+  margin-top: 5px;
+}
+#wrapper > div div a {
+  display: block;
+  text-decoration: none;
+  color: #c72d2f;
+}
+#wrapper > div div a span {
+  text-transform: uppercase;
+}
+#wrapper > div div.yellowBox {
+  background-color: #ffffdd;
+  border: 1px solid yellow;
+}
+#wrapper > div div.yellowBox a {
+  display: inline;
+}

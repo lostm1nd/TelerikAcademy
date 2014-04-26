@@ -1,0 +1,112 @@
+html, body, div, hgroup, h1, h2, h3, p, a, span {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+	font-size: 16px;
+}
+
+#wrapper {
+	width: 960px;
+
+
+	&>div {
+		width: 140px;
+		float: left;		
+		margin-top: 20px;
+		padding: 10px 4px;
+
+		hgroup {
+			display: block;
+			background-image: url(imgs/install.png);
+			background-repeat: no-repeat;
+			background-position: bottom left;
+			margin-bottom: 16px;
+
+			h2, h3 {
+				font-size: 1em;
+				margin-left: 40px;
+				display: inline-block;
+			}
+		}
+
+		&:first-child {
+			margin-left: 20px;
+			border-left: 2px solid #D3D7DA;
+		}
+
+		&:nth-child(2) hgroup {
+			background-image: url(imgs/tuneUp.png);
+		}
+
+		&:nth-child(3) hgroup {
+			background-image: url(imgs/manage.png);
+		}
+
+		&:nth-child(4) hgroup {
+			background-image: url(imgs/openSource.png);
+			h2 {
+				margin-top: 20px;
+			}
+		}
+
+		&:nth-child(5) hgroup {
+			background-image: url(imgs/twitter.png);
+			h2 {
+				margin-top: 20px;
+			}
+		}
+
+		&:nth-child(6) hgroup {
+			background-image: url(imgs/about.png);
+			h2 {
+				margin-top: 20px;
+			}
+		}
+
+		&:nth-child(odd) {
+			height: 240px;
+			border-top: 2px solid #D3D7DA;
+			border-bottom: 2px solid #D3D7DA;
+		}
+
+		&:nth-child(even) {
+			height: 260px;
+			border: 2px solid #D3D7DA;
+
+			background: #ffffff;
+			background: -moz-linear-gradient(top,  #ffffff 0%, #f1f2f3 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f1f2f3));
+			background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f2f3 100%);
+			background: -o-linear-gradient(top,  #ffffff 0%,#f1f2f3 100%);
+			background: -ms-linear-gradient(top,  #ffffff 0%,#f1f2f3 100%);
+			background: linear-gradient(to bottom,  #ffffff 0%,#f1f2f3 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f2f3',GradientType=0 );
+		}
+
+		div {
+			margin-top: 5px;
+
+			a {
+				display: block;
+				text-decoration: none;
+				color: rgb(199, 45, 47);
+
+				span {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		div.yellowBox {
+			background-color: rgb(255, 255, 221);
+			border: 1px solid yellow;
+
+			a {
+				display: inline;
+			}
+		}		
+	}
+}

@@ -1,0 +1,60 @@
+body, div, ul, li, img, a, span {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px;
+}
+
+#wrapper {
+  width: 960px;
+}
+#wrapper > div {
+  width: 680px;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-color: #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  zoom: 1;
+}
+#wrapper > div:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+#wrapper .holder {
+  float: left;
+}
+#wrapper .holder img {
+  width: 550px;
+  border-radius: 5px;
+}
+#wrapper .playlist {
+  float: left;
+  margin-left: 10px;
+}
+#wrapper .playlist li {
+  border-bottom: 1px solid black;
+  list-style-type: none;
+  text-align: center;
+  padding: 5px 2px 5px 8px;
+}
+#wrapper .playlist a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#wrapper .playlist a img {
+  border-radius: 10px;
+}
+#wrapper .playlist a span {
+  display: block;
+  text-align: center;
+  margin-top: -5px;
+}
+#wrapper .playlist a:hover {
+  text-decoration: underline;
+}

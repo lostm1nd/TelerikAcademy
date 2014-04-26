@@ -1,0 +1,114 @@
+﻿html, body, div, ul, li, a, span {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+	font-size: 16px;
+}
+
+#wrapper {
+	width: 960px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul.msg-bar {
+	margin-top: 201px;
+	margin-left: 50px;
+	position: relative;
+}
+
+ul.msg-bar>li {
+	display: inline-block;
+	border-top: 4px solid #fff;
+}
+
+ul.msg-bar>li a {
+	display: block;
+	border: 1px solid black;
+	text-decoration: none;
+	text-align: center;
+	width: 114px;
+	height: 20px;
+	padding: 5px 0;
+	color: rgb(0, 148, 255);
+	background: #aaffef;
+	background: -moz-linear-gradient(top,  #aaffef 0%, #13ffd2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaffef), color-stop(100%,#13ffd2));
+	background: -webkit-linear-gradient(top,  #aaffef 0%,#13ffd2 100%);
+	background: -o-linear-gradient(top,  #aaffef 0%,#13ffd2 100%);
+	background: -ms-linear-gradient(top,  #aaffef 0%,#13ffd2 100%);
+	background: linear-gradient(to bottom,  #aaffef 0%,#13ffd2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaffef', endColorstr='#13ffd2',GradientType=0 );
+
+}
+
+ul.msg-bar>li a:hover {
+	background: rgb(0, 221, 179);
+	border-top: none;
+}
+
+ul.msg-bar>li:hover {
+	border-top: 4px solid rgba(170, 255, 239, 1);
+}
+
+div.msg-bar-content {
+	display: none;
+	position: absolute;
+	height: 138px;
+	width: 437px;
+	left: 0;
+	top: -158px;
+	background-color: rgb(170, 255, 239);
+	border: 1px solid black;
+	border-bottom: none;
+	border-radius: 15px 15px 0 0;
+	color: rgb(0, 148, 255);
+	padding: 10px 10px 10px 15px;
+}
+
+div.msg-bar-content li span:first-child {
+	border: 1px solid black;
+	border-radius: 15px;
+	display: inline-block;
+	width: 83px;
+	text-align: center;
+	padding: 5px 0;
+	margin-bottom: 5px;
+}
+
+div.msg-bar-content li span:nth-child(2){
+	border-bottom: 1px solid black;
+	display: inline-block;
+	width: 300px;
+	text-align: right;
+	padding: 5px 15px;
+}
+
+div.msg-bar-content li:last-child  span:nth-child(2) {
+	border-bottom: none;
+}
+
+div.msg-bar-content li.me-item span:first-child {
+	background-image: url(imgs/me.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	width: 60px;
+	padding-left: 10px;
+	margin-right: 23px;
+}
+
+div.msg-bar-content li.other-item span:first-child {
+	background-image: url(imgs/male.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 10px;
+}
+
+ul.msg-bar>li a:hover + div.msg-bar-content {
+	display: block;
+}

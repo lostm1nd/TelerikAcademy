@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<!--[if gte IE 9]>
+		  <style type="text/css">
+		    .gradient {
+		       filter: none;
+		    }
+		  </style>
+	<![endif]-->
+</head>
+<body>
+<div id="container">
+	<header class="gradient">
+		<img src="images/icon.png" alt="Calculator icon" width="20px" height="20px">
+		<h1>Calculator</h1>
+		<button class="gradient">X</button>
+		<button class="gradient">&#9712;</button>
+		<button class="gradient">_</button>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="">View</a>
+				<ul class="submenu1">
+					<li><a href="">Standart</a></li>
+					<li><a href="">Scientific</a></li>
+					<li><a href="">Programmer</a></li>
+					<li><a href="">Statistics</a></li>
+					<li><a href="">History</a></li>
+					<li><a href="">Digit grouping</a></li>
+					<li><a href="">Basic</a></li>
+					<li><a href="">Unit conversion</a></li>
+					<li><a href="">Date calculation</a></li>
+					<li><a href="">Worksheets <img src="images/arrow_icon.png" alt="expand arrow" width="12" height="15"></a>
+						<ul class="submenu2">
+							<li><a href="">Mortgage</a></li>
+							<li><a href="">Vehicle lease</a></li>
+							<li><a href="">Fuel economy (mpg)</a></li>
+							<li><a href="">Fuel economy (L/100 km)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="">Edit</a>
+				<ul class="submenu1">
+					<li><a href="">Copy</a></li>
+					<li><a href="">Paste</a></li>
+				</ul>
+			</li>
+			<li><a href="">Help</a>
+				<ul class="submenu1">
+					<li><a href="">View Help</a></li>
+					<li><a href="">About Calculator</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<section id="display" class="gradient">
+		<p>0</p>
+	</section>
+	<section id="binary">
+		<div>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>63</p>
+		</div>
+		<div>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>47</p>
+			<p>32</p>
+		</div>
+		<div>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>31</p>
+		</div>
+		<div>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>0000</p>
+			<p>15</p>
+			<p>0</p>
+		</div>
+	</section>
+	<aside id="numeralSystem">
+		<form>
+			<p>
+				<input type="radio" name="num-sys" id="hex">
+				<label for="hex">Hex</label>
+			</p>
+			<p>
+				<input type="radio" name="num-sys" id="dec" checked>
+				<label for="dec">Dec</label>
+			</p>
+			<p>
+				<input type="radio" name="num-sys" id="oct">
+				<label for="oct">Oct</label>
+			</p>
+			<p>
+				<input type="radio" name="num-sys" id="bin">
+				<label for="bin">Bin</label>
+			</p>
+		</form>
+	</aside>
+	<section id="buttons">
+		<table>
+			<tr>
+				<td></td>
+				<td>Mod</td>
+				<td>A</td>
+				<td>MC</td>
+				<td>MR</td>
+				<td>MS</td>
+				<td>M+</td>
+				<td>M-</td>
+			</tr>
+			<tr>
+				<td>(</td>
+				<td>)</td>
+				<td>B</td>
+				<td><img src="images/back_arrow.png" alt="back arrow" width="30" height="10"></td>
+				<td>CE</td>
+				<td>C</td>
+				<td>&plusmn;</td>
+				<td>&radic;</td>
+			</tr>
+			<tr>
+				<td>RoL</td>
+				<td>RoR</td>
+				<td>C</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>/</td>
+				<td>%</td>
+			</tr>
+			<tr>
+				<td>Or</td>
+				<td>Xor</td>
+				<td>D</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>*</td>
+				<td>1/x</td>
+			</tr>
+			<tr>
+				<td>Lsh</td>
+				<td>Rsh</td>
+				<td>E</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td rowspan="2">=</td>
+			</tr>
+			<tr>
+				<td>Not</td>
+				<td>And</td>
+				<td>F</td>
+				<td colspan="2">0</td>
+				<td>.</td>
+				<td>+</td>
+			</tr>
+		</table>
+	</section>
+	<aside id="wordSystem">
+		<form>
+			<p>
+				<input type="radio" name="word-sys" id="qword" checked>
+				<label for="qword">Qword</label>
+			</p>
+			<p>
+				<input type="radio" name="word-sys" id="qword">
+				<label for="qword">Dword</label>
+			</p>
+			<p>
+				<input type="radio" name="word-sys" id="word">
+				<label for="word">Word</label>
+			</p>
+			<p>
+				<input type="radio" name="word-sys" id="byte">
+				<label for="byte">Byte</label>
+			</p>
+		</form>
+	</aside>
+</div>
+</body>
+</html>

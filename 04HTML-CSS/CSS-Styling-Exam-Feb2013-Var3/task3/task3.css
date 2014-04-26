@@ -1,0 +1,94 @@
+html, body, div, header, h1, h2, h3, p, img, span, ul, ol, li, a, table, thead, tbody, tr, th, td, form, fieldset, legend, label, input, button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Cambria, 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', serif;
+  font-size: 18px;
+}
+
+#wrapper {
+  width: 960px;
+}
+#wrapper form {
+  background: #ebff5b;
+  background: -moz-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebff5b), color-stop(100%, #444444));
+  background: -webkit-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -o-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -ms-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: linear-gradient(to bottom, #ebff5b 0%, #444444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+  margin: 25px 0 0 25px;
+  padding: 15px;
+  width: 380px;
+  color: #fff;
+  text-align: right;
+  border: 1px solid #555555;
+  border-radius: 15px;
+  font-size: 0.9em;
+}
+#wrapper form fieldset {
+  border: 3px solid #555555;
+  padding: 10px 15px 0 15px;
+  border-radius: 5px;
+}
+#wrapper form fieldset legend {
+  padding: 0 15px;
+  margin-right: 30px;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+}
+#wrapper form fieldset input {
+  background: #ebff5b;
+  background: -moz-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebff5b), color-stop(100%, #444444));
+  background: -webkit-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -o-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: -ms-linear-gradient(top, #ebff5b 0%, #444444 100%);
+  background: linear-gradient(to bottom, #ebff5b 0%, #444444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+  border: 2px solid #444444;
+  border-radius: 5px;
+  height: 26px;
+  width: 169px;
+  margin-bottom: 5px;
+  padding: 0 5px;
+  color: #fff;
+}
+#wrapper form fieldset input#tb-age {
+  width: 35px;
+}
+#wrapper form fieldset:last-of-type {
+  margin-bottom: 10px;
+}
+#wrapper form input[type=radio] {
+  display: none;
+}
+#wrapper form > label:nth-of-type(2) {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#wrapper form button, #wrapper form input[type=reset] {
+  background: #e3fd28;
+  background: -moz-linear-gradient(top, #e3fd28 0%, #464644 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e3fd28), color-stop(100%, #464644));
+  background: -webkit-linear-gradient(top, #e3fd28 0%, #464644 100%);
+  background: -o-linear-gradient(top, #e3fd28 0%, #464644 100%);
+  background: -ms-linear-gradient(top, #e3fd28 0%, #464644 100%);
+  background: linear-gradient(to bottom, #e3fd28 0%, #464644 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  width: 141px;
+  height: 34px;
+  margin-top: 15px;
+  color: #333;
+  font-size: 1.2em;
+}
+#wrapper form input[type=reset] {
+  width: 119px;
+}

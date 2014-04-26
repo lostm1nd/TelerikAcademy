@@ -1,0 +1,116 @@
+section {
+  background: -moz-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.75) 0%, #a39d7a 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(163, 157, 122, 0.75)), color-stop(100%, #a39d7a));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.75) 0%, #a39d7a 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.75) 0%, #a39d7a 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.75) 0%, #a39d7a 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(163, 157, 122, 0.75) 0%, #a39d7a 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfa39d7a', endColorstr='#a39d7a',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+section ul li span, section ul li .overlay {
+  background: -moz-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.45) 1%, rgba(151, 143, 102, 0.45) 35%, rgba(141, 132, 85, 0.8) 63%, rgba(127, 117, 63, 0.8) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, rgba(163, 157, 122, 0.45)), color-stop(35%, rgba(151, 143, 102, 0.45)), color-stop(63%, rgba(141, 132, 85, 0.8)), color-stop(100%, rgba(127, 117, 63, 0.8)));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.45) 1%, rgba(151, 143, 102, 0.45) 35%, rgba(141, 132, 85, 0.8) 63%, rgba(127, 117, 63, 0.8) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.45) 1%, rgba(151, 143, 102, 0.45) 35%, rgba(141, 132, 85, 0.8) 63%, rgba(127, 117, 63, 0.8) 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(163, 157, 122, 0.45) 1%, rgba(151, 143, 102, 0.45) 35%, rgba(141, 132, 85, 0.8) 63%, rgba(127, 117, 63, 0.8) 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(163, 157, 122, 0.45) 1%, rgba(151, 143, 102, 0.45) 35%, rgba(141, 132, 85, 0.8) 63%, rgba(127, 117, 63, 0.8) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73a39d7a', endColorstr='#cc7f753f',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+section, ul, li, img {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 80%;
+  margin: 10px auto;
+  padding: 12px 0;
+  border-radius: 8px;
+}
+section ul {
+  list-style-type: none;
+  display: table;
+  margin: 0 auto;
+}
+section ul li {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #7F753F;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 5px;
+  margin: 0 12px;
+}
+section ul li a:hover span {
+  opacity: 0;
+}
+section ul li span {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fffad5;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  top: 5px;
+  left: 5px;
+  text-align: center;
+  text-shadow: 0 0 2px #fff;
+  transition: opacity 0.5s linear;
+}
+section ul li .overlay {
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+}
+section ul li .overlay img {
+  height: 90%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+section ul li .overlay a {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 50%;
+  text-decoration: none;
+  background-color: #6c6e42;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fffad5;
+  z-index: 2;
+}
+section ul li .overlay:target {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  padding: 2% 0;
+}
+section ul li .overlay:target img {
+  opacity: 1;
+}

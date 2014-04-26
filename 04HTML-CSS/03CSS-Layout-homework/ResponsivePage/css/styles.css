@@ -1,0 +1,253 @@
+body {
+	background-color: #2a626f;
+}
+
+.clearfix:before {
+	zoom: 1;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+div#site {
+	max-width: 960px;
+	margin: 12px auto;
+	padding: 8px;
+	border: 1px solid #333;
+	outline: 2px outset #ccc;
+	background-image: url(../images/page-background.png);
+}
+
+nav {
+	display: block;
+	width: 15%;
+	float: left;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+nav>ul>li {
+	font-weight: bold;
+	color: hsl(0, 75%, 35%);
+	margin-top: 24px;
+}
+
+nav>ul>li:first-child {
+	color: #333;
+	text-transform: uppercase;
+}
+
+nav>ul>li:first-child img {
+	vertical-align: text-bottom;
+	margin-left: 2px;
+	margin-right: 8px;
+}
+
+nav ul ul {
+	font-size: 0.875em;
+	font-weight: normal;
+}
+
+section {
+	display: block;
+	background-color: #f6f6f6;
+	padding: 6px;
+	border: 1px solid #333;
+	outline: 1px outset #ccc;
+}
+
+section.main {
+	float: left;
+	width: 65%;
+}
+
+section.main>header {
+	border-bottom: 3px solid #ccc;
+}
+
+section.main>header a,
+section.main>footer a {
+	display: inline-block;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #333;
+	width: 120px;
+	text-align: center;
+	background-image: url(../images/arrow-icon-left.png);	
+	background-repeat: no-repeat;
+	background-position: left center;
+	-o-background-size: contain;
+	background-size: contain;
+	margin-bottom: 10px;
+}
+
+section.main>header a:nth-of-type(2),
+section.main>footer a:nth-of-type(2) {
+	background-image: url(../images/arrow-icon-right.png);
+	background-position: right center;
+}
+
+section.main article header,
+aside.sidebar section header {
+	display: block;
+	background-color: #888;
+	color: #fff;
+}
+
+section.main article img {
+	float: left;
+	margin-right: 8px;
+}
+
+section.main article:first-of-type p {
+	font-weight: bold;
+}
+
+section a {
+	color: hsl(0, 75%, 35%);
+	font-weight: normal;
+}
+
+section.main>footer {
+	display: block;
+	border-top: 3px solid #ccc;
+	border-bottom: 3px solid #ccc;
+	margin-bottom: 22px;
+}
+
+section.main>footer a {
+	margin: 8px 0;
+}
+
+aside.sidebar {
+	display: block;
+	width: 15%;
+	float: left;
+	margin-left: 12px;
+}
+
+aside.sidebar section,
+aside.sidebar header,
+aside.sidebar header h1,
+aside.sidebar p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+aside.sidebar section {
+	margin-bottom: 2px;
+}
+
+aside.sidebar section article {
+	padding: 6px;
+}
+
+aside.sidebar header h1 {
+	text-transform: uppercase;
+	font-size: 0.85em;
+}
+
+#search input[type="search"] {
+	width: 75%;
+}
+
+#search input[type="submit"] {
+	width: 20%;
+}
+
+a.gradientButton {
+	display: inline-block;
+	width: 60%;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: #005772;
+	border: 1px solid #005772;
+	background: #29b8e5; /* Old browsers */
+	background: -moz-linear-gradient(left,  #29b8e5 0%, #b3dced 10%, #b3dced 90%, #29b8e5 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#29b8e5), color-stop(10%,#b3dced), color-stop(90%,#b3dced), color-stop(99%,#29b8e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #29b8e5 0%,#b3dced 10%,#b3dced 90%,#29b8e5 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #29b8e5 0%,#b3dced 10%,#b3dced 90%,#29b8e5 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #29b8e5 0%,#b3dced 10%,#b3dced 90%,#29b8e5 99%); /* IE10+ */
+	background: linear-gradient(to right,  #29b8e5 0%,#b3dced 10%,#b3dced 90%,#29b8e5 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29b8e5', endColorstr='#29b8e5',GradientType=1 ); /* IE6-9 */
+
+}
+
+/* ================= MEDIA QUERIES ============== */
+@media screen and (max-width: 980px) {
+	section.main {
+		width: 83%;
+	}
+
+	aside.sidebar {
+		float: none;
+		width: 83%;
+		margin-left: 15%;
+		text-align: center;
+	}
+
+	aside.sidebar section {
+		display: inline-block;
+		width: 100px;
+		height: 130px;
+		margin: 5px 2px 0 0;
+		vertical-align: top;
+	}
+
+	aside.sidebar #search input {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	nav {
+		display: block;
+		width: 98%;
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	nav>ul>li {
+		display: inline-block;
+		position: relative;
+		margin: 0 2px 4px 2px;
+	}
+
+	nav ul ul {
+		display: none;
+	}
+
+	nav>ul>li:hover ul {
+		display: block;
+		position: absolute;
+		width: 175%;
+		background-color: #888;
+		color: #fff;
+	}
+
+	nav ul ul li:hover {
+		color: hsl(0, 75%, 35%);
+	}
+
+	section.main {
+		display: block;
+		width: 98%;
+		margin: 0 auto;
+	}
+
+	aside.sidebar {
+		width: 98%;
+		margin: 0 auto;
+	}
+}
