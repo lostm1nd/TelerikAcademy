@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find max sequence in array</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="numbers">Enter numbers separated by a comma</label>
+	<input type="text" id="numbers">
+	<br>
+	<button onclick="maxSequence()">Find sequence</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function maxSequence() {
+			var numbersArr = document.getElementById('numbers').value.split(/\s*,\s*/),
+				counter = 0,
+				maxCount = 0,
+				endIndex = -1;
+
+			for (var i = 1; i < numbersArr.length; i++) {
+				counter = 0;
+
+				while (numbersArr[i-1] === numbersArr[i]) {
+					counter++;
+					i++;
+				}
+
+				// add 1 because we out counter counts only 1 for the first two equal elements
+				if (counter +1 > maxCount) {
+					maxCount = counter + 1;
+					endIndex = i;
+				}
+			}
+
+			document.getElementById('result').innerHTML = 'Max sequence is: ' + maxCount + '<br>' +
+															'Elements: {' + numbersArr.slice(endIndex - maxCount, endIndex).toString() + '}';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Binary Search</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="numbers">Enter numbers separated by a comma</label>
+	<input type="text" id="numbers">
+	<br>
+	<label for="searched">Enter searched element</label>
+	<input type="text" id="searched">
+	<br>
+	<button onclick="binarySearch()">Sort</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function binarySearch() {
+			var numbersArr = document.getElementById('numbers').value.split(/\s*,\s*/),
+				element = document.getElementById('searched').value,
+				index = -1,
+				start = 0,
+				end = numbersArr.length - 1,
+				middle = start / 2 + end / 2;
+
+			numbersArr.sort(function(a, b) { return a - b; });
+			document.getElementById('result').innerHTML = numbersArr.join(', ') + '<br>';
+
+			while (start <= end) {
+				middle = start / 2 + end / 2;
+
+				if ((numbersArr[middle] | 0)  === (element | 0)) {
+					index = middle;
+					break;
+				} else if ((numbersArr[middle] | 0)  > (element | 0)) {
+					end = middle - 1;
+				} else {
+					start = middle + 1;
+				}
+			}
+
+			if (index === -1) {
+				document.getElementById('result').innerHTML += 'Element ' + element + ' not found';
+			} else {
+				document.getElementById('result').innerHTML += 'The index of ' + element + ' is ' + index;
+			}	
+		}
+	</script>
+</body>
+</html>

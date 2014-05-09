@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Compare Char Arrays</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="first">Enter first array as a word</label>
+	<input type="text" id="first">
+	<br>
+	<label for="second">Enter second array as a word</label>
+	<input type="text" id="second">
+	<br>
+	<button onclick="compare()">Compare</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function compare() {
+			var firstArr = document.getElementById('first').value;
+			var secondArr = document.getElementById('second').value;
+
+			if (firstArr.length !== secondArr.length) {
+				document.getElementById('result').innerHTML = 'The two arrays are not equal' + '<br>' +
+																'First array length: ' + firstArr.length + '<br>' +
+																'Second array length: ' + secondArr.length + '<br>';
+			} else {
+				document.getElementById('result').innerHTML = 'The two arrays have equal length: ' + firstArr.length + '<br>';
+
+				for (var i = 0; i < firstArr.length; i++) {
+					if (firstArr[i] === secondArr[i]) {
+						document.getElementById('result').innerHTML += firstArr[i] + ' === ' + secondArr[i] + '<br>';
+					} else {
+						document.getElementById('result').innerHTML += firstArr[i] + ' !== ' + secondArr[i] + '<br>';
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

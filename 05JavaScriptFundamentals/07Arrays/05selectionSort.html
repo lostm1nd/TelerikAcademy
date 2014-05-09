@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selection Sort</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="numbers">Enter numbers separated by a comma</label>
+	<input type="text" id="numbers">
+	<br>
+	<button onclick="selectionSort()">Sort</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function selectionSort() {
+			var numbersArr = document.getElementById('numbers').value.split(/\s*,\s*/),
+				smallest = 0,
+				index = 0;
+
+			document.getElementById('result').innerHTML = 'Array before sorting: ' + numbersArr.join(', ') + '<br>';
+
+			for (var i = 0; i < numbersArr.length; i++) {
+				smallest = numbersArr[i];
+				index = i;
+
+				// search for the smallest element in the rest of the array
+				for (var j = i; j < numbersArr.length; j++) {					
+
+					if ((smallest | 0) > (numbersArr[j] | 0)) {
+						smallest = numbersArr[j];
+						index = j;
+					}
+				}
+
+				// swap the current element with the smallest
+				// the small numbers go at the beginning of the array
+				numbersArr[index] = numbersArr[i];
+				numbersArr[i] = smallest;
+			}
+
+			document.getElementById('result').innerHTML += 'Array after sorting: ' + numbersArr.join(', ') + '<br>';
+		}
+	</script>
+</body>
+</html>

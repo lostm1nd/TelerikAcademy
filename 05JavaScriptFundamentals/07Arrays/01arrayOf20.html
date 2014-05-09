@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array of 20 elements</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="range">Array element count</label>
+	<input type="text" id="range">
+	<button onclick="generateArray()">Do it!</button>
+	<div id="result"></div>
+
+	<script>
+		function generateArray() {
+			var count = document.getElementById('range').value | 0;
+			var arr = new Array(count);
+
+			for (var i = 0; i < arr.length; i++) {
+				arr[i] = i * 5;
+			}
+
+			document.getElementById('result').innerHTML = arr.join(', ');
+		}
+	</script>
+</body>
+</html>
