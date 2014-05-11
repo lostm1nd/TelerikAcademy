@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reverse Digits</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="number">Enter a number</label>
+	<input type="text" id="number">
+	<br>
+	<button onclick="reverseDigits()">Reverse Number</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function reverseDigits() {
+			var number = document.getElementById('number').value,
+				reversed = '';
+
+			for (var i = 0; i < number.length; i++) {
+				reversed += number[number.length - 1 - i];
+			}
+
+			document.getElementById('result').innerHTML = 'Original number: ' + number + '<br>' + 
+															'Reversed number: ' + reversed;
+		}
+	</script>
+</body>
+</html>

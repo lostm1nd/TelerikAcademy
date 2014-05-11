@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find first number bigger than its neighbour elements in array</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="array">Enter numbers separated by a comma:</label>
+	<input type="text" id="array">
+	<br>
+	<button onclick="findNumber()">Compare</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function compare() {
+			var arr = (document.getElementById('array').value.split(/\s*,\s*/)).map(function(x) { return parseInt(x); }),
+				index = -1;
+
+			for (var i = 0; i < arr.length; i+=1) {
+				
+				if (arr[i] > arr[i-1] && arr[i] > arr[i+1]) {
+					index = i;
+					return index;
+				}
+			}
+
+			return index;
+		}
+
+		function findNumber() {
+			var index = compare();
+
+			if (index === -1) {
+				document.getElementById('result').innerHTML = 'There is no element bigger than its neighbours';
+			} else {
+				document.getElementById('result').innerHTML = 'The element at index ' + index + ' is bigger than its neighbours';
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Count Numbers in Array</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="test()">Count</button>
+	<div id="result"></div>
+
+	<script>
+		function test() {
+			var arr1 = [23, 4, 5, 12, 23, 5, 6, 7, 101, -10],
+				arr2 = [11, 0, 23, -12, 32, 532, 129, 1, 2],
+				arr3 = [10, 99, 100, 200, 201, 100, 101, 23, 4, 55, -100],
+				arr4 = [23, 23, 55, 12, 10, 25, 63, 89, 199, 201, 69];
+
+			print(5, arr1);
+			validate(2, count(5, arr1));
+
+			print(5, arr2);
+			validate(0, count(5, arr2));
+
+			print(99, arr3);
+			validate(1, count(99, arr3));
+
+			print(23, arr4);
+			validate(2, count(23, arr1));
+		}
+
+		function print(number, array) {
+			document.getElementById('result').innerHTML += 'Search for: ' + number + '<br>' +
+															'In: ' + array.join(', ') + '<br>'; 
+		}
+
+		function validate(expected, recieved) {
+			document.getElementById('result').innerHTML += 'Expected: ' + expected + '<br>' +
+															'Recieved: ' + recieved + '<br>';
+
+			if (expected == recieved) {
+				document.getElementById('result').innerHTML += 'Correct!' + '<br><br>';
+			} else {
+				document.getElementById('result').innerHTML += 'Incorrect!' + '<br><br>';
+			}
+		}
+
+		function count(number, array) {
+			var counter = 0;
+
+			for (var i = 0; i < array.length; i+=1) {
+				if (array[i] === number) {
+					counter += 1;
+				}
+			}
+
+			return counter;
+		}
+	</script>
+</body>
+</html>

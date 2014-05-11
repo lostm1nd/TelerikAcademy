@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shapes in Planar coordinate system</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="point1">Enter (x, y) for point 1</label>
+	<input type="text" id="point1">
+	<br>
+	<label for="point2">Enter (x, y) for point 2</label>
+	<input type="text" id="point2">
+	<br>
+	<button onclick="calcDistance()">Calculate Distance</button>
+	<br>
+	<label for="point3">Enter (x, y) for point 3</label>
+	<input type="text" id="point3">
+	<br>
+	<label for="point4">Enter (x, y) for point 4</label>
+	<input type="text" id="point4">
+	<br>
+	<label for="point5">Enter (x, y) for point 5</label>
+	<input type="text" id="point5">
+	<br>
+	<label for="point6">Enter (x, y) for point 6</label>
+	<input type="text" id="point6">
+	<br>
+	<button onclick="checkTriangle()">Check whether all points form a triangle</button>
+
+	<div id="result"></div>
+
+	<script>
+		function Point(x, y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		function Line(point1, point2) {
+			this.startPoint = point1;
+			this.endPoint = point2;
+			this.lineLength = Math.sqrt((point1.x - point2.x) * (point1.x - point2.x) + 
+								(point1.y + point2.y) * (point1.y + point2.y));
+		}
+
+		function calcDistance() {
+			var point1 = document.getElementById('point1').value.split(/\s*,\s*/),
+				point2 = document.getElementById('point2').value.split(/\s*,\s*/),
+				line = {};
+
+			// convert the numbers into Point object
+			// convert the Points into a Line
+			point1 = new Point(parseInt(point1[0], 10), parseInt(point1[1], 10));
+			point2 = new Point(parseInt(point2[0],10), parseInt(point2[1], 10));
+			line = new Line(point1, point2);
+
+			document.getElementById('result').innerHTML = 'The distance between P1(' +
+															point1.x + ', ' + point1.y + ')' +
+															' and P2(' +
+															point2.x + ', ' + point2.y + ')' +
+															' is ' + line.lineLength;
+		}
+
+		function checkTriangle() {
+			var point1 = document.getElementById('point1').value.split(/\s*,\s*/),
+				point2 = document.getElementById('point2').value.split(/\s*,\s*/),
+				point3 = document.getElementById('point3').value.split(/\s*,\s*/),
+				point4 = document.getElementById('point4').value.split(/\s*,\s*/),
+				point5 = document.getElementById('point5').value.split(/\s*,\s*/),
+				point6 = document.getElementById('point6').value.split(/\s*,\s*/);
+
+			// check whether points form triangle
+			// point2 should be at the same coordinates as point3
+			// point4 as point5
+			// point6 as point1
+			if (point2[0] === point3[0] && point2[1] === point3[1] &&
+					point4[0] === point5[0] && point4[1] === point5[1] &&
+					point6[0] === point1[0] && point6[1] === point1[1]) {
+				document.getElementById('result').innerHTML = 'The given points form a triangle';
+			} else {
+				document.getElementById('result').innerHTML = 'The given point do not form a triangle';
+			}
+		}
+	</script>
+</body>
+</html>

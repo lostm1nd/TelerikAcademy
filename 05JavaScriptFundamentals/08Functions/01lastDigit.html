@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get Last Digit</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="number">Enter an integer number</label>
+	<input type="text" id="number">
+	<br>
+	<button onclick="getLastDigit()">Get Digit</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function getLastDigit() {
+			var number = document.getElementById('number').value | 0,
+				lastDigit = '';
+
+			switch (number % 10) {
+				case 0:
+					lastDigit = 'zero';
+					break;
+				case 1:
+					lastDigit = 'one';
+					break;
+				case 2:
+					lastDigit = 'two';
+					break;
+				case 3:
+					lastDigit = 'three';
+					break;
+				case 4:
+					lastDigit = 'four';
+					break;
+				case 5:
+					lastDigit = 'five';
+					break;
+				case 6:
+					lastDigit = 'six';
+					break;
+				case 7:
+					lastDigit = 'seven';
+					break;
+				case 8:
+					lastDigit = 'eight';
+					break;
+				case 9:
+					lastDigit = 'nine';
+					break;
+				default:
+					lastDigit = 'unknown digit';
+					break;
+			}
+
+			document.getElementById('result').innerHTML = 'The last digit of ' + number + ' is ' + lastDigit;
+		}
+	</script>
+</body>
+</html>

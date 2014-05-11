@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Word Search</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="text">Enter text</label>
+	<br>
+	<textarea name="text" id="text" cols="30" rows="10"></textarea>
+	<br>
+	<label for="search">Word to search:</label>
+	<input type="text" id="search">
+	<br>
+	<label for="insensitive">Case insensitive search</label>
+	<input type="checkbox" id="insensitive">
+	<br>
+	<button onclick="searchInitializer()">Search</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function searchInitializer() {
+			var caseInsensitive = document.getElementById('insensitive').checked,
+				word = document.getElementById('search').value;
+
+			if (caseInsensitive) {
+				searchWord(word, caseInsensitive);
+			} else {
+				searchWord(word);
+			}
+		}
+
+		function searchWord(word, searchType) {
+			var text = document.getElementById('text').value,
+				pattern = '\\b' + word + '\\b',
+				regExp = new RegExp(pattern, 'g'),
+				wordCount = [];
+
+			if (searchType) {
+				regExp = new RegExp(pattern, 'gi');
+				wordCount = text.match(regExp);
+			} else {				
+				wordCount = text.match(regExp);
+			}
+
+			if (wordCount) {
+				document.getElementById('result').innerHTML = 'The word "' + word + '" occurs ' + wordCount.length + ' times';
+			} else {
+				document.getElementById('result').innerHTML = 'The word "' + word + '" does not occur in the text';
+			}
+			
+		}
+	</script>
+</body>
+</html>

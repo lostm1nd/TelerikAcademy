@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find youngest person in the array</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="fn">Enter first name:</label>
+	<input type="text" id="fn">
+	<br>
+	<label for="ln">Enter last name:</label>
+	<input type="text" id="ln">
+	<br>
+	<label for="age">Enter age:</label>
+	<input type="text" id="age">
+	<br>
+	<button onclick="add()">Add person</button>
+	<button onclick="search()">Find youngest</button>
+
+	<div id="result"></div>
+
+	<script>
+		var people = [];
+
+		function add() {
+			people.push({
+				firstName: document.getElementById('fn').value,
+				lastName: document.getElementById('ln').value,
+				age: parseInt(document.getElementById('age').value, 10)
+			});
+
+			document.getElementById('result').innerHTML += 'Added: "' + people[people.length-1].firstName + ' ' +
+															people[people.length-1].lastName + ' ' +
+															people[people.length-1].age + '"<br>';
+		}
+
+		function search() {
+			var index = 0;
+
+			if (people.length === 0) {
+				document.getElementById('result').innerHTML += 'No people were added to the array!<br>';
+			} else {
+
+				for (var i = 0; i < people.length; i+=1) {
+					if (people[index].age > people[i].age) {
+						index = i;
+					}
+				}
+
+				document.getElementById('result').innerHTML += 'The youngest person is ' + people[index].firstName + ' ' +
+																people[index].lastName + ' and his/her age is ' +
+																people[index].age + '<br>';
+			}
+		}
+	</script>
+</body>
+</html>

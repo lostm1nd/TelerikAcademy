@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Check property</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="fn">Enter first name:</label>
+	<input type="text" id="fn">
+	<br>
+	<label for="ln">Enter last name:</label>
+	<input type="text" id="ln">
+	<br>
+	<label for="age">Enter age:</label>
+	<input type="text" id="age">
+	<br>
+	<button onclick="add()">Add person</button>
+	<button onclick="sort('fnSort')">Sort by first name</button>
+	<button onclick="sort('lnSort')">Sort by lastname name</button>
+	<button onclick="sort('ageSort')">Sort by age</button>
+
+	<div id="result"></div>
+
+	<script>
+		var people = [];
+
+		function add() {
+			people.push({
+				firstName: document.getElementById('fn').value,
+				lastName: document.getElementById('ln').value,
+				age: parseInt(document.getElementById('age').value, 10)
+			});
+
+			document.getElementById('result').innerHTML += 'Added: "' + people[people.length-1].firstName + ' ' +
+															people[people.length-1].lastName + ' ' +
+															people[people.length-1].age + '"<br>';
+		}
+
+		function sort(criteria) {
+			var grouped = {},
+				sortingArr = [],
+				sortedObj = {};
+
+			if (criteria === 'fnSort') {
+				criteria = 'firstName';
+			} else if (criteria === 'lnSort') {
+				criteria = 'lastName';
+			} else if (criteria === 'ageSort') {
+				criteria = 'age';
+			} else {
+				alert('Invalid criteria');
+				return;
+			}
+
+			for (var i = 0; i < people.length; i+=1) {
+
+				// check if the object already has the wanted property
+				// if not create property with an empty array and push the person object
+				if (!grouped.hasOwnProperty(people[i][criteria])) {
+					grouped[people[i][criteria]] = [];
+				}
+				grouped[people[i][criteria]].push({fn: people[i].firstName, ln: people[i].lastName, age: people[i].age});
+			}
+
+			// get the keys from the grouped object
+			// and then sort them
+			for (var prop in grouped) {
+				if (grouped.hasOwnProperty(prop)) {
+					sortingArr.push(prop);
+				}
+			}
+
+			if (criteria === 'age') {
+				sortingArr.sort(function(a, b) { return a-b; });
+			} else {
+				sortingArr.sort();
+			}
+
+			// copy the sorted keys into a new object
+			for (var k = 0; k < sortingArr.length; k+=1) {
+				sortedObj[sortingArr[k]] = grouped[sortingArr[k]];
+			}
+
+			// ouput grouped and sorted object
+			document.getElementById('result').innerHTML += 'Grouped and sorted: ' + JSON.stringify(sortedObj) + '<br><br>';
+		}
+	</script>
+</body>
+</html>

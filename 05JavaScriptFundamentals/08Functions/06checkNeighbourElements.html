@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Check neighbour elements in array</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="array">Enter numbers separated by a comma:</label>
+	<input type="text" id="array">
+	<br>
+	<label for="index">Enter the index of an element:</label>
+	<input type="text" id="index">
+	<br>
+	<button onclick="compare()">Compare</button>
+	<br>
+	<div id="result"></div>
+
+	<script>
+		function compare() {
+			var arr = document.getElementById('array').value.split(/\s*,\s*/),
+				index = document.getElementById('index').value | 0,
+				bigger = true;
+
+			if (index >= 0 && index < arr.length) {
+
+				if (index - 1 >= 0 && (arr[index-1] | 0) >= (arr[index] | 0)) {
+					bigger = false;
+				}
+
+				if (index + 1 < arr.length && (arr[index+1] | 0) >= (arr[index] | 0)) {
+					bigger = false;
+				}
+			} else {
+				document.getElementById('result').innerHTML = 'Invalid index ' + index;
+			}
+
+			if (bigger) {
+				document.getElementById('result').innerHTML = 'Element ' + arr[index] + ' at index ' + index + ' is larger than its neighbours';
+			} else {
+				document.getElementById('result').innerHTML = 'Element ' + arr[index] + ' at index ' + index + ' is not larger than its neighbours';
+			}
+		}
+	</script>
+</body>
+</html>

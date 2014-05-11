@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Func for deep copying</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="prop">Add property to the object</label>
+	<input type="text" id="prop">
+	<br>
+	<label for="value">Add value to the property</label>
+	<input type="text" id="value">
+	<br>
+	<button onclick="addProp()">Add</button>
+	<button onclick="clone()">Clone object</button>
+	<button onclick="showClone()">Display cloned object</button>
+
+	<div id="result"></div>
+
+	<script>
+		var userObj = {},
+			cloned = {};
+
+		function addProp() {
+			var prop = document.getElementById('prop').value,
+				value = document.getElementById('value').value;
+
+			userObj[prop] = value;
+
+			document.getElementById('result').innerHTML += 'Object: ' + JSON.stringify(userObj) + '<br><br>';
+		}
+
+		function clone() {
+
+			for (var prop in userObj) {
+
+				if (userObj.hasOwnProperty(prop)) {
+					cloned[prop] = userObj[prop];
+				}
+			}
+
+			document.getElementById('result').innerHTML += 'Cloned Object: ' + JSON.stringify(cloned) + '<br><br>';
+		}
+
+		function showClone() {
+			document.getElementById('result').innerHTML += 'Cloned Object: ' + JSON.stringify(cloned) + '<br><br>';
+		}
+	</script>
+</body>
+</html>

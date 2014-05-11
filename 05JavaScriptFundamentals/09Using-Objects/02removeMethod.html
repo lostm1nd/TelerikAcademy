@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Remove func on Array.prototype</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="arr">Enter numbers separated by a comma</label>
+	<input type="text" id="arr">
+	<br>
+	<label for="remove">Number to remove</label>
+	<input type="text" id="remove">
+	<br>
+	<button onclick="performRemove()">Remove</button>
+
+	<div id="result"></div>
+
+	<script>
+		Array.prototype.remove = function remove(number) {
+			var result = [],
+				resIndex = 0;
+
+			for (var i = 0; i < this.length; i+=1) {
+
+				if (number !== this[i]) {
+					result[resIndex] = this[i];
+					resIndex += 1;
+				}
+			}
+
+			return result;
+		};
+
+		function performRemove() {
+			var numberArray = (document.getElementById('arr').value.split(/\s*,\s*/))
+							.map(function(x) { return parseInt(x, 10); }),
+				numberToRemove = parseInt(document.getElementById('remove').value, 10),
+				resultingArray = [];
+
+			document.getElementById('result').innerHTML = 'Starting array: ' + numberArray.join(', ') + '<br>' +
+															'Removing element: ' + numberToRemove + '<br>';
+
+			resultingArray = numberArray.remove(numberToRemove);
+
+			document.getElementById('result').innerHTML += 'Result: ' + resultingArray.join(', ') + '<br>' +
+															'Array length: ' + resultingArray.length;
+		}
+	</script>
+</body>
+</html>

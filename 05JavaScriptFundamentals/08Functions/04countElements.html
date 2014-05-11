@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Count Elements</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="element">Element to count</label>
+	<input type="text" id="element">
+	<br>
+	<button onclick="count()">Count</button>
+	<br>
+	<div id="result"></div>
+
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+	<script>
+		function count() {
+			var element = document.getElementById('element').value,
+				counter = document.getElementsByTagName(element);
+
+			document.getElementById('result').innerHTML = 'There is/are ' + counter.length + ' ' + element + ' element/s on this page';
+		}
+	</script>
+</body>
+</html>
