@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Joro the naughty</title>
+	<script>
+		function Solve(args) {
+			// n = fieldAndJumps[0], m = fieldAndJumps[1], jumps = fieldAndJumps[2]
+			var fieldAndJumps = args[0].split(' ').map(function(x) { return parseInt(x); }),
+				startPosition = args[1].split(' ').map(function(x) { return parseInt(x); }),
+				jumps = [],
+				field = [],
+				counter = 1,
+				sumOfNumbers = 0,
+				row = startPosition[0],
+				col = startPosition[1];
+
+			// get the jump values from the input
+			for (var i = 0; i < fieldAndJumps[2]; i+=1) {
+				jumps[i] = args[i+2].split(' ');
+			}
+
+			// fill the matrix with numbers
+			for (var k = 0; k < fieldAndJumps[0]; k+=1) {
+				
+				field[k] = [];
+
+				for (var j = 0; j < fieldAndJumps[1]; j+=1) {
+					
+					field[k].push(counter);
+					counter += 1;
+				}
+			}
+
+			// execute jump sequence
+			for (var l = 0; l < jumps.length; l+=1) {
+
+				// if we step on a visited cell we are caught
+				if (field[row][col] === 'visited') {
+					return 'caught ' + (l + 1);
+				}
+
+				// martk the cell as visited
+				sumOfNumbers += field[row][col];
+				field[row][col] = 'visited';
+
+				row += jumps[l][0] | 0;
+				col += jumps[l][1] | 0;
+
+				// if row does not exist it will return undefined
+				// if col does not exist it will return undefined
+				// if we try !field[row][col] we get an error when row is undefined
+				// because we access property of undefined
+				if (!field[row] || !field[row][col]) {
+					return 'escaped ' + sumOfNumbers;
+				}
+
+				// start the jump sequence from the beginning
+				if (l === jumps.length - 1) {
+					l = -1;
+				}
+			}
+		}
+
+		Solve(['6 7 3', '0 0', '2 2', '-2 2', '3 -1']);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

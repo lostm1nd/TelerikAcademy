@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sequences</title>
+	<script>
+		function Solve(args) {
+			var N = args[0] | 0,
+				array = [],
+				sequencesCount = 0;
+
+			for (var i = 0; i < N; i+=1) {
+				// convert to number
+				// otherwise it wont work properly
+				// "2" < "11" -> false
+				array[i] = args[i + 1] | 0;
+			}
+
+			for (var j = 0; j < array.length; j+=1) {
+				
+				if (array[j] <= array[j+1]) {
+					sequencesCount += 1;
+
+					while (array[j] <= array[j+1]) {					
+						j += 1;
+					}
+				} else {
+					sequencesCount += 1;
+				}
+			}
+
+			return sequencesCount;
+		}
+
+		Solve([5, 5, 4, 3, 2 ,1]);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
