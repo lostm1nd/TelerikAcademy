@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Replace "a" tags with "URL"</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="html">Enter sample HTML</label>
+	<br>
+	<textarea id="html" cols="30" rows="10"></textarea>
+	<button onclick="replace()">Replace</button>
+
+	<div id="result"></div>
+
+	<script>
+		function replace() {
+			var userInput = document.getElementById('html').value,
+				toBeReplaced = '<a href="',
+				replacement = '[URL=',
+				pattern = new RegExp(toBeReplaced, 'g'),
+				resultRegExp,
+				resultSplitJoin;
+
+			// replacing with RegExp
+			resultRegExp = userInput.replace(pattern, replacement);
+
+			// replacing with split-join method
+			// separate statements for ease of debugging
+			resultSplitJoin = userInput.split(pattern);
+			resultSplitJoin = resultSplitJoin.join(replacement);
+
+			toBeReplaced = '">';
+			replacement = ']';
+			pattern = new RegExp(toBeReplaced, 'g');
+
+			// replacing...
+			resultRegExp = resultRegExp.replace(pattern, replacement);
+			resultSplitJoin = resultSplitJoin.split(pattern);
+			resultSplitJoin = resultSplitJoin.join(replacement);
+
+			toBeReplaced = '</a>';
+			replacement = '[/URL]';
+			pattern = new RegExp(toBeReplaced, 'g');
+
+			// and again
+			resultRegExp = resultRegExp.replace(pattern, replacement);
+			resultSplitJoin = resultSplitJoin.split(pattern);
+			resultSplitJoin = resultSplitJoin.join(replacement);
+
+			document.getElementById('result').innerHTML += 'The new markup is:' + resultRegExp + '<br>';
+			document.getElementById('result').innerHTML += 'Split-join:' + resultSplitJoin + '<br>';
+		}
+	</script>
+</body>
+</html>

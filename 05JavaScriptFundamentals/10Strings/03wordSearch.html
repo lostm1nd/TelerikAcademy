@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search word in text</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="text">Enter text</label>
+	<br>
+	<textarea id="text"></textarea>
+	<br>
+	<label for="word">Word to search</label>
+	<input type="text" id="word">
+	<button onclick="searchWord()">Search</button>
+
+	<div id="result"></div>
+
+	<script>
+		function searchWord() {
+			function loopCount() {
+				var count = 0,
+					index = 0;
+
+				while (userInput.toLowerCase().indexOf(wordToSearch.toLowerCase(), index) >= 0) {
+					count +=1;
+					index = userInput.toLowerCase().indexOf(wordToSearch.toLowerCase(), index) + wordToSearch.length;
+				}
+
+				return count;
+			}
+
+			var userInput = document.getElementById('text').value,
+				wordToSearch = document.getElementById('word').value,
+				pattern = new RegExp(wordToSearch, "gi"),
+				matches,
+				iterativeCount = 0;
+
+			matches = userInput.match(pattern);
+			iterativeCount = loopCount();
+
+			document.getElementById('result').innerHTML += 'The word: ' + wordToSearch + ' appears ' +
+															matches.length + ' times in the text.<br>';
+
+			document.getElementById('result').innerHTML += 'Iterative count found ' + iterativeCount + ' matches.<br>';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formatting string</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="format">Enter a string with placeholders ({0} text {1} text {2} text)</label>
+	<br>
+	<input type="text" id="format">
+	<br>
+	<label for="values">Enter values separated by a comma</label>
+	<br>
+	<input type="text" id="values">
+	<br>
+	<button onclick="format()">Format</button>
+
+	<div id="result"></div>
+
+	<script>
+		function format() {
+
+			function stringFormat(text, args) {
+				var result = text;
+
+				for (var i = 0; i < args.length; i+=1) {
+					
+					// loop through the args and if a placeholder with a number
+					// that matches the index of an element exists
+					// replace the placeholder with that element from the args array
+					if (result.indexOf('{' + i + '}') >= 0) {
+						result = result.replace(new RegExp('\\{' + i + '\\}', 'g'), args[i]);
+					}
+				}
+
+				// remove all unused placeholders
+				result = result.replace(/\{\d\}/g, '');
+				return result;
+			}
+
+			var userInput = document.getElementById('format').value,
+				values = document.getElementById('values').value.split(/\s*,\s*/),
+				formattedStr = stringFormat(userInput, values);
+
+			document.getElementById('result').innerHTML += 'The formatted string is: ' + formattedStr + '<br>';
+		}
+	</script>
+</body>
+</html>

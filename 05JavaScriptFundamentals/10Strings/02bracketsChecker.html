@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search word in text</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="exp">Enter expression</label>
+	<input type="text" id="exp">
+	<button onclick="check()">Check brackets!</button>
+
+	<div id="result"></div>
+
+	<script>
+		function check() {
+			var userInput = document.getElementById('exp').value,
+				brackets = 0;
+
+			for (var i = 0; i < userInput.length; i++) {
+
+				if (userInput[i] === '(') {
+					brackets += 1;
+				} else if (userInput[i] === ')') {
+					brackets -= 1;
+				}
+			}
+
+			if (brackets === 0) {
+				document.getElementById('result').innerHTML += 'All brackets are put correcty<br>';
+			} else if (brackets > 0) {
+				document.getElementById('result').innerHTML += 'Some brackets are left open<br>';
+			} else {
+				document.getElementById('result').innerHTML += 'Closing brackets do not match the open brackets<br>';
+			}
+		}
+	</script>
+</body>
+</html>

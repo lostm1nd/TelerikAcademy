@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extract all palindromes</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="palindromes">Enter text with palindromes in it</label>
+	<br>
+	<textarea id="palindromes" cols="30" rows="10">This is a rotor. My new motor. Search in the exe. Two live down. Some move like Neven. Do you remember ABBA?</textarea>
+	<button onclick="extract()">Extract</button>
+
+	<div id="result"></div>
+
+	<script>
+		function extract() {
+			var userInput = document.getElementById('palindromes').value,
+				words = userInput.split(/[ ,?!.]+/),
+				wordLen = 0,
+				palindrome = true;
+			
+			document.getElementById('result').innerHTML = 'Palindromes are:<br>';
+
+			for (var i = 0; i < words.length; i+=1) {
+
+				wordLen = words[i].length;
+				palindrome = true;
+				for (var j = 0; j < wordLen / 2; j+=1) {
+
+					if (words[i][j] !== words[i][wordLen - 1 - j]) {
+						palindrome = false;
+					}
+				}
+
+				if (palindrome && wordLen > 1) {
+					document.getElementById('result').innerHTML += words[i] + '<br>';
+				}
+			}
+		}
+	</script>
+</body>
+</html>

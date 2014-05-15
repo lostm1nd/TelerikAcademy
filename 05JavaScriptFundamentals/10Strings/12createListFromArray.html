@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Creating a list from array elements</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="name">Enter name:</label>
+	<input type="text" id="name">
+	<br>
+	<label for="age">Enter age:</label>
+	<input type="text" id="age">
+	<br>
+	<button onclick="createList()">Add to list</button>
+
+	<div id="listHolder"></div>
+
+	<script>
+		var people = [];
+
+		function createList() {
+
+			var name = document.getElementById('name').value,
+				age = parseInt(document.getElementById('age').value, 10),
+				list = '<ul>';
+
+			people.push({ fn: name, age: age });
+
+			for (var i = 0; i < people.length; i++) {
+				list += '<li><strong>' + people[i].fn + '</strong>&nbsp;<span>' +
+						people[i].age + '</span></li>';
+			}
+
+			list += '</ul>';
+			document.getElementById('listHolder').innerHTML = list;
+		}
+	</script>
+</body>
+</html>

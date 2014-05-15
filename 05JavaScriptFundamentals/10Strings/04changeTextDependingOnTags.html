@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Change text</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="text">Enter text using upcase, lowcase and mixcase tags</label>
+	<br>
+	<textarea id="text" cols="30" rows="10"></textarea>
+	<button onclick="convert()">Execute tags</button>
+
+	<div id="result"></div>
+
+	<script>
+		function convert() {
+			function changeChars(command, startIndex, endIndex) {
+				var mixCounter = 0;
+
+				if (command === 'up') {
+
+					for (startIndex; startIndex <= endIndex; startIndex+=1) {
+						result[startIndex] = result[startIndex].toUpperCase();
+					}
+				} else if (command == 'low') {
+
+					for (startIndex; startIndex <= endIndex; startIndex+=1) {
+						result[startIndex] = result[startIndex].toLowerCase();
+					}
+				} else {
+
+					for (startIndex; startIndex <= endIndex; startIndex+=1) {
+
+						if (mixCounter % 2 === 0) {
+							result[startIndex] = result[startIndex].toUpperCase();
+						} else {
+							result[startIndex] = result[startIndex].toLowerCase();
+						}
+						mixCounter += 1;
+					}
+				}
+			}
+
+			function deleteChars(startIndex, endIndex) {
+				for (var i = startIndex; i <= endIndex; i+=1) {
+						result.splice(startIndex, 1);
+					}
+			}
+
+			var userInput = document.getElementById('text').value.toString(),
+				result = userInput.split(''),
+				closeTagStart = userInput.indexOf('</'),
+				closeTagEnd = userInput.indexOf('>', closeTagStart + 2),
+				startTagEnd = userInput.lastIndexOf('>', closeTagStart - 1),
+				startTagStart = userInput.lastIndexOf('<', startTagEnd - 1),
+				tag = userInput.substring(closeTagStart, closeTagEnd + 1);
+
+			while (closeTagStart !== -1) {
+
+				switch (tag) {
+					case '</upcase>':
+						changeChars('up', startTagEnd + 1, closeTagStart - 1);
+						break;
+					case '</lowcase>':
+						changeChars('low', startTagEnd + 1, closeTagStart - 1);
+						break;
+					case '</mixcase>':
+						changeChars('mix', startTagEnd + 1, closeTagStart - 1);
+						break;
+				}
+
+				deleteChars(closeTagStart, closeTagEnd);
+				deleteChars(startTagStart, startTagEnd);
+
+				userInput = result.join('');
+
+				closeTagStart = userInput.indexOf('</');
+				closeTagEnd = userInput.indexOf('>', closeTagStart + 2);
+				startTagEnd = userInput.lastIndexOf('>', closeTagStart - 1);
+				startTagStart = userInput.lastIndexOf('<', startTagEnd - 1);
+				tag = userInput.substring(closeTagStart, closeTagEnd + 1);
+			}
+
+			document.getElementById('result').innerHTML = 'After applying the tags<br>' + result.join('');
+		}
+	</script>
+</body>
+</html>

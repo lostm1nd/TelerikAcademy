@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extract all email addresses</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="email">Enter text with email addresses in it</label>
+	<br>
+	<textarea id="email" cols="30" rows="10">This is my email:jamie44@hotmail.com! Hello send me a letter at gizmo.work@gmail.com;<br>Add me-p_er23@doom.eu<br>My new place str4ng3R_22@oblivion.ca. Working on blast_over.me@newuniverse.info.</textarea>
+	<button onclick="extract()">Extract</button>
+
+	<div id="result"></div>
+
+	<script>
+		function extract() {
+			var userInput = document.getElementById('email').value,
+				pattern = new RegExp('[a-zA-Z0-9._]+@\\w+\\.\\w{2,5}', 'g'),
+				matches = userInput.match(pattern);
+
+			// match method returns 'null' if no matches are found otherwise an array
+			// so we check if matches is not null we print whatever is in the array
+			if (matches) {
+				document.getElementById('result').innerHTML += 'All email addresses:<br>' + matches.join('<br>') + '<br>';
+			} else {
+				document.getElementById('result').innerHTML += 'No email addresses found.<br>';
+			}
+			
+		}
+	</script>
+</body>
+</html>

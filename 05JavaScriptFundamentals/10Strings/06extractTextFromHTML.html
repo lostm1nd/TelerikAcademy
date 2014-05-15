@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extract text from HTML</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="html">Enter sample HTML with text</label>
+	<br>
+	<textarea id="html" cols="30" rows="10"></textarea>
+	<button onclick="extract()">Extract text</button>
+
+	<div id="result"></div>
+
+	<script>
+		function extract() {
+			var userInput = document.getElementById('html').value,
+				extractedText = '',
+				closeTagIndex = userInput.indexOf('</'),
+				openTagIndex = userInput.lastIndexOf('>', closeTagIndex - 1);
+
+			while (closeTagIndex !== -1 && openTagIndex !== -1) {
+
+				extractedText += userInput.substring(openTagIndex + 1, closeTagIndex);
+				closeTagIndex = userInput.indexOf('</', closeTagIndex + 1);
+				openTagIndex = userInput.lastIndexOf('>', closeTagIndex - 1);
+			}
+
+			document.getElementById('result').innerHTML = extractedText;
+		}
+	</script>
+</body>
+</html>

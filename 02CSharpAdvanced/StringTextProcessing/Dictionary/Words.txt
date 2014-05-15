@@ -1,0 +1,7 @@
+﻿.NET – platform for applications from Microsoft
+CLR – managed execution environment for .NET
+namespace – hierarchical organization of classes
+OOP - object oriented programming
+Class - extensive template for creating objects
+instance - a specific realization of any object
+Method - a subroutine (or procedure or function) associated with an object

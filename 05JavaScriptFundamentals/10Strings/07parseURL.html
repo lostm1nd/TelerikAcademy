@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Parse URL</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="url">Enter URL</label>
+	<input type="text" id="url">
+	<button onclick="parseURL()">Parse</button>
+
+	<div id="result"></div>
+
+	<script>
+		function parseURL() {
+			var userInput = document.getElementById('url').value,
+				index = userInput.indexOf(':'),
+				protocol = userInput.substring(0, index),
+				server = index + 3,
+				resource,
+				url;
+
+			// '://' has a length of three so we search the next slash starting at
+			// the current index of ':' + 3
+			index = userInput.indexOf('/', index + 3);
+
+			// we start after '://' up to the next '/'
+			// we use server as first index since already i have saved
+			// the starting position in that variable to save space
+			server = userInput.substring(server, index);
+
+			// everything following the '/' after the server
+			resource = userInput.substring(index);
+
+			url = {
+				protocol: protocol,
+				server: server,
+				resource: resource
+			};
+
+			url = JSON.stringify(url);
+
+			document.getElementById('result').innerHTML += 'URL as JSON: ' + url + '<br>';
+		}
+	</script>
+</body>
+</html>

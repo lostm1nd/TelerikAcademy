@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Replace whitespace</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="text">Enter text</label>
+	<br>
+	<textarea id="text"></textarea>
+	<br>
+	<button onclick="replace()">Replace whitespace</button>
+
+	<div id="result"></div>
+
+	<script>
+		function replace() {
+			var userInput = document.getElementById('text').value,
+				replacement = '&nbsp;',
+				modifiedText,
+				modifiedTextRegEx;
+
+			// we can see the result while debugging this way
+			modifiedText = userInput.split(' ');
+			modifiedText = modifiedText.join('&nbsp;');
+			modifiedTextRegEx = userInput.replace(/\s/g, '&nbsp;');
+
+			document.getElementById('result').innerHTML += 'Replaced whitespace: ' + modifiedText + '<br>';
+			document.getElementById('result').innerHTML += 'Result is better represented in the console<br>';
+		}
+	</script>
+</body>
+</html>

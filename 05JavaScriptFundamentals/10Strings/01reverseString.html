@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reverse a string</title>
+	<style>
+		#result {
+			width: 800px;
+			height: 600px;
+			overflow-y: scroll;
+			background-color: black;
+			color: white;
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<label for="toReverse">Enter a string</label>
+	<input type="text" id="toReverse">
+	<button onclick="reverseString()">Reverse it!</button>
+
+	<div id="result"></div>
+
+	<script>
+		function reverseString() {
+			var userInput = document.getElementById('toReverse').value,
+				strLen = userInput.length,
+				reversed = '';
+
+			for (var i = 0; i < strLen; i++) {
+				reversed += userInput[strLen - 1 - i];
+			}
+
+			document.getElementById('result').innerHTML += 'Your input: ' + userInput + '<br>';
+			document.getElementById('result').innerHTML += 'Reversed: ' + reversed;
+		}
+	</script>
+</body>
+</html>
