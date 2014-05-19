@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clojure Parsing</title>
+</head>
+<body>
+	<script>
+	function Solve(args) {
+		var funcDefinitions = {},
+			tokens = [],
+			divisionByZero = false,
+			finalResult;
+
+
+		for (var curLine = 0; curLine < args.length; curLine+=1) {
+			
+			tokens = formatInput(args[curLine]);
+			
+			// skip opening brace '('
+			// check the next element
+			if (tokens[1] === "def") {
+				defineFunc(tokens.slice(2));
+			} else {
+				finalResult = calculateExpr(tokens.slice(1));
+			}
+
+			if (divisionByZero) {
+				// console.log('Division by zero! At Line:' + (curLine + 1));
+				return 'Division by zero! At Line:' + (curLine + 1);
+			}
+		}
+
+		// console.log(finalResult);
+		return finalResult;
+
+		function formatInput(input) {
+			input = input.split('(').join(' ( ');
+			input = input.split(')').join(' ) ');
+			input = input.split(' ').filter(String);
+			return input;
+		}
+
+		function defineFunc(funcParams) {
+			var funcName = funcParams[0];
+
+			if (funcParams[1] === '(') {
+				funcDefinitions[funcName] = calculateExpr(funcParams.slice(2));
+			} else {
+				// debugger;
+				if (funcDefinitions.hasOwnProperty(funcParams[1])) {
+					funcParams[1] = funcDefinitions[funcParams[1]];
+				}
+
+				funcDefinitions[funcName] = parseInt(funcParams[1], 10);
+			}
+		}
+
+		function calculateExpr(expression) {
+			var operator = expression[0],
+				result;
+
+			expression = expression.slice(1);
+			result = expression.reduce(function(x, y){
+					if (y === ')') {
+						if (funcDefinitions.hasOwnProperty(x)) {
+							x = funcDefinitions[x];
+						}
+
+						return x;
+					}
+					// check if one of the operands is
+					// a function that is already defined
+					// else we need to parse the strings
+					if (funcDefinitions.hasOwnProperty(x)) {
+						x = funcDefinitions[x];
+					}
+
+					if (funcDefinitions.hasOwnProperty(y)) {
+						y = funcDefinitions[y];
+					}
+
+					x = parseInt(x, 10);
+					y = parseInt(y, 10);
+
+					if (operator === '+') {
+						return x + y;
+					} else if (operator === '-') {
+						return x - y;
+					} else if (operator === '*') {
+						return x * y;
+					} else if (operator === '/') {
+						if (y === 0) {
+							divisionByZero = true;
+						}
+						return (x / y) | 0;
+					}
+				});
+
+			return result;
+		}
+	}
+
+	Solve([
+		'(def joros 30)',
+		'(def newFunc (-  101 10))',
+		'(def tryFunc 500)',
+		'(def tryFunc2 (+ 500 tryFunc )',
+		'(def tryFunc1 (+ 500 tryFunc2 )',
+		'(/ newFunc  )'
+		]);
+	</script>
+</body>
+</html>
