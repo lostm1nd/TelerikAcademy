@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Listy Interpreter</title>
+</head>
+<body>
+<script>
+	
+function Solve(args) {
+	var definedVariables = {},
+		currentLine,
+		finalResult,
+		itemsInArr;
+
+	for (var i = 0; i < args.length; i++) {
+
+		currentLine = formatInput(args[i]);
+
+		if (currentLine[0] === 'def') {
+			defineVariable(currentLine.slice(1));
+
+		} else if (currentLine[0] === 'sum' || currentLine[0] === 'min' || 
+				   currentLine[0] === 'max' || currentLine[0] === 'avg') {
+
+			itemsInArr = getListItems(currentLine.slice(1));
+			finalResult = performCalculation(itemsInArr, currentLine[0]);
+		} else {
+			finalResult = definedVariables[currentLine[0]];
+		}
+	}
+
+	// console.log(finalResult);
+	return finalResult;
+
+
+	function formatInput(input) {
+		input = input.split('[').join(' ');
+		input = input.split(']').join(' ');
+		input = input.split(',').join(' ');
+		input = input.split(' ').filter(String);
+		return input;
+	}
+
+	function defineVariable(input) {
+		var operands = [];
+
+		if (input[1] === 'sum' || input[1] === 'min' || 
+			input[1] === 'max' || input[1] === 'avg') {
+
+			operands = getListItems(input.slice(2));
+			definedVariables[input[0]] = performCalculation(operands, input[1]);
+
+		} else {
+
+			definedVariables[input[0]] =  getListItems(input.slice(1));
+		}
+	}
+
+	function getListItems(input) {
+		var listItems = [];
+
+		input.forEach(function(item) {
+			if (definedVariables.hasOwnProperty(item)) {
+				listItems = listItems.concat(definedVariables[item]);
+			} else {
+				listItems.push(parseInt(item,10));
+			}
+		});
+
+		return listItems;
+	}
+
+	function performCalculation(items, operation) {
+		var result = items.reduce(function(a, b) {
+									if (operation === 'sum' || operation == 'avg') {
+										return a + b;
+									} else if (operation === 'min') {
+										return Math.min(a, b);
+									} else if (operation === 'max') {
+										return Math.max(a, b);
+									}
+								});
+
+		if (operation === 'avg') {
+			result = result / items.length;
+			result = result | 0;
+		}
+
+		return result;
+	}
+}
+
+Solve([
+	'def maxy max[100, 5000, 4,2,1]',
+	'def summary1 [0]',
+	'def summary11 avg[summary1,maxy]',
+	'def summary111 avg[   summary11 ,  maxy]',
+	'def summary1111 avg[summary111 , maxy]',
+	'sum[75468, summary1111]'
+	]);
+
+</script>	
+</body>
+</html>
