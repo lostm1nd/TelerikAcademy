@@ -6,7 +6,7 @@ In order to ensure the high quality of the assigned project you need to fulfill 
 interfaces, methods, properties, fields and other class members and program members and its 
 programming logic) in order to make the code “high quality” according to the best practices 
 introduced in the course “High-Quality Programming Code”. The obtained refactored code should 
-conform to the following characteristics: 
+conform to the following characteristics:
 	-Easy to read, understand and maintain – the code should be well structured; should be easy to 
 	read and understand, easy to modify and maintain; should follow the concept of self-documenting 
 	code; should use good names for classes, methods, variables, and other identifiers; should be 
@@ -15,7 +15,7 @@ conform to the following characteristics:
 	methods, etc.; should follow the best practices of organizing programming logic at all levels 
 	(classes, methods, loops, conditional statements and other statements); should follow the best 
 	practices for working with variables, data, expressions, constants, control structures, exceptions, 
-	comments, etc. 
+	comments, etc.
 	-Correct behavior – the project should fulfill correctly the requirements and to behave correctly in 
 	all possible use cases. This means that all bugs or other problems in the project (e.g. performance 
 	or usability issues) should be fixed and any unfinished or missing functionality should be 
