@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The face with the Hat</title>
+	<style>
+		canvas {
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="draw-board" width="300" height="400"></canvas>
+
+	<script>
+		(function draw() {
+			'use strict';
+
+			var canvas = document.getElementById('draw-board'),
+				canvasCtx = canvas.getContext('2d');
+
+			function ellipse(cx, cy, rx, ry, degrees){
+				if (!degrees) {
+					degrees = 360;
+				}
+
+		        canvasCtx.save();
+		        canvasCtx.beginPath();
+
+		        canvasCtx.translate(cx-rx, cy-ry);
+		        canvasCtx.scale(rx, ry);
+		        canvasCtx.arc(1, 1, 1, 0, degrees * Math.PI / 180, false);
+
+		        canvasCtx.restore();
+		        canvasCtx.stroke();
+			}
+
+			// color and width
+			canvasCtx.fillStyle = '#7db9e8';
+			canvasCtx.strokeStyle = '#207cca';
+			canvasCtx.lineWidth = 5;
+
+			// draw face
+			ellipse(150, 250, 100, 95);
+			canvasCtx.fill();
+
+			// reset width for smaller elements
+			// and change fill for eyeballs
+			canvasCtx.lineWidth = 2;
+			canvasCtx.fillStyle = '#207cca';
+
+			// draw left eye
+			ellipse(100, 210, 15, 10);
+			ellipse(94, 210, 3, 6);
+			canvasCtx.fill();
+
+			// draw right eye
+			ellipse(160, 210, 15, 10);
+			ellipse(154, 210, 3, 6);
+			canvasCtx.fill();
+
+			// draw nose
+			canvasCtx.moveTo(130, 210);
+			canvasCtx.lineTo(110, 250);
+			canvasCtx.lineTo(135, 250);
+			canvasCtx.stroke();
+
+			// draw mouth
+			canvasCtx.save();
+			canvasCtx.rotate(0.20);
+			ellipse(180, 260, 45, 20);
+			canvasCtx.restore();
+
+			// change colors
+			canvasCtx.fillStyle = '#1E5799';
+			canvasCtx.strokeStyle = '#000000';
+			canvasCtx.lineWidth = 3;
+
+			// hat base
+			ellipse(150, 160, 120, 30);
+			canvasCtx.fill();
+
+			// hat rect part
+			canvasCtx.lineWidth = 2;
+			canvasCtx.fillRect(95, 50, 120, 90);
+			canvasCtx.strokeRect(95, 50, 120, 90);
+
+			// hat middle ellipse
+			canvasCtx.lineWidth = 3;
+			ellipse(155, 138, 60, 15, 180);
+			canvasCtx.fill();
+
+			// hat top ellipse
+			ellipse(155, 50, 60, 15);
+			canvasCtx.fill();
+
+		}());
+	</script>
+</body>
+</html>
