@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home sweet home</title>
+</head>
+<body>
+	<canvas id="drawing-board" width="400" height="400">
+	</canvas>
+
+	<script>
+		(function draw() {
+			var canvas = document.getElementById('drawing-board'),
+				canvasCtx =	canvas.getContext('2d'),
+				house = {x: 50, y: 200, width: 300, height: 200};
+
+			function createWindow(x, y, width, height) {
+				var drawX = x;
+
+				for (var row = 0; row < 2; row+=1) {
+					for (var col = 0; col < 2; col+=1) {
+						canvasCtx.fillRect(drawX, y, width, height);
+						drawX += width + 2;
+					}
+					drawX = x;
+					y += height + 2;
+				}
+			}
+
+			// draw house main structure
+			canvasCtx.fillStyle = '#862d2d';
+			canvasCtx.fillRect(house.x, house.y,
+								house.width, house.height);
+
+			canvasCtx.strokeRect(house.x, house.y,
+								house.width, house.height);
+
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(house.x, house.y);
+			canvasCtx.lineTo(200, 50);
+			canvasCtx.lineTo(house.x + house.width, house.y);
+			canvasCtx.closePath();
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			// chimney
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(250, 150);
+			canvasCtx.lineTo(250, 80);
+			canvasCtx.lineTo(280, 80);
+			canvasCtx.lineTo(280, 150);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(250, 80);
+			canvasCtx.quadraticCurveTo(265, 90, 280, 80);
+			canvasCtx.quadraticCurveTo(265, 70, 250, 80);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			// windows
+			canvasCtx.fillStyle = '#000000';
+			createWindow(house.x+40, house.y+20, 40, 30);
+			createWindow(house.x+180, house.y+20, 40, 30);
+			createWindow(house.x+180, house.y+100, 40, 30);
+
+			// door
+			canvasCtx.lineWidth = 2;
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(100, 400);
+			canvasCtx.lineTo(100, 350);
+			canvasCtx.bezierCurveTo(100, 300,
+									180, 300,
+									180, 350);
+			canvasCtx.lineTo(180, 400);
+			canvasCtx.moveTo(140, 400);
+			canvasCtx.lineTo(140, 312);
+			canvasCtx.stroke();
+
+			// door knobs
+			canvasCtx.beginPath();
+			canvasCtx.arc(130, 370, 5, 0, 2*Math.PI, false);
+			canvasCtx.moveTo(155, 370);
+			canvasCtx.arc(150, 370, 5, 0, 2*Math.PI, false);
+			canvasCtx.stroke();
+		}());
+	</script>
+</body>
+</html>
