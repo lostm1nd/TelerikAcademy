@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bicycle</title>
+	<style>
+		canvas {
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="drawing-board" width="500" height="500">
+	</canvas>
+
+	<script>
+		(function draw() {
+			'use strict';
+
+			var canvas = document.getElementById('drawing-board'),
+				canvasCtx = canvas.getContext('2d');
+
+			// set colors and line specs
+			canvasCtx.fillStyle = '#47b4eb';
+			canvasCtx.strokeStyle = '#005580';
+			canvasCtx.lineWidth = 2;
+			canvasCtx.lineCap = 'round';
+
+			// left wheel
+			var leftWheelX = 120,
+				leftWheelY = 300,
+				wheelRadius = 50;
+
+			canvasCtx.beginPath();
+			canvasCtx.arc(leftWheelX, leftWheelY, wheelRadius, 0, 2*Math.PI, false);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			// right wheel
+			var rightWheelX = 350,
+				rightWheelY = 300;
+
+			canvasCtx.beginPath();
+			canvasCtx.arc(rightWheelX, rightWheelY, 50, 0, 2*Math.PI, false);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			// frame
+			var crankX = 230,
+				crankY = 300,
+				crankRad = 15,
+				seatX = 180,
+				seatY = 200;
+
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(leftWheelX, leftWheelY);
+			canvasCtx.lineTo(crankX, crankY);
+			canvasCtx.lineTo(320, 230);
+			canvasCtx.lineTo(210, 230);
+			canvasCtx.lineTo(120, 300);
+
+			canvasCtx.moveTo(seatX, seatY);
+			canvasCtx.lineTo(220, seatY);
+			
+
+			canvasCtx.moveTo(200, 200);
+			canvasCtx.lineTo(crankX, crankY);
+
+			canvasCtx.moveTo(260, 180);
+			canvasCtx.lineTo(290, 180);
+			canvasCtx.lineTo(310, 200);
+			canvasCtx.lineTo(320, 170);
+			canvasCtx.lineTo(280, 170);
+
+			canvasCtx.moveTo(310, 200);
+			canvasCtx.lineTo(rightWheelX, rightWheelY);
+
+			canvasCtx.stroke();
+
+			// saddle
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(220, seatY);
+			canvasCtx.quadraticCurveTo(220, 190, seatX+20, seatY-10);
+			canvasCtx.quadraticCurveTo(seatX - 10, seatY - 20, seatX, seatY);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			// draw crank and pedals
+			canvasCtx.beginPath();
+			canvasCtx.moveTo(crankX, crankY);
+			canvasCtx.lineTo(200, 270);
+			canvasCtx.lineTo(210, 260);
+			canvasCtx.lineTo(220, 270);
+			canvasCtx.lineTo(210, 280);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+			canvasCtx.beginPath();
+			canvasCtx.arc(crankX, crankY, crankRad, 0, 2*Math.PI, false);
+			canvasCtx.moveTo(crankX, crankY);
+			canvasCtx.lineTo(260, 330);
+			canvasCtx.lineTo(250, 340);
+			canvasCtx.lineTo(240, 330);
+			canvasCtx.lineTo(250, 320);
+			canvasCtx.fill();
+			canvasCtx.stroke();
+
+		}());
+	</script>
+</body>
+</html>
