@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorsPerformance", "OperatorsPerformance\OperatorsPerformance.csproj", "{0420A0E2-3DEE-4058-B59F-AF5D1A278C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathOperationsPerf", "MathOperationsPerf\MathOperationsPerf.csproj", "{364A8CDB-A1E4-4305-828C-86019B6BB568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsPerf", "AlgorithmsPerf\AlgorithmsPerf.csproj", "{CF687560-480B-42E4-8899-E0C36BF4A237}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0420A0E2-3DEE-4058-B59F-AF5D1A278C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0420A0E2-3DEE-4058-B59F-AF5D1A278C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0420A0E2-3DEE-4058-B59F-AF5D1A278C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0420A0E2-3DEE-4058-B59F-AF5D1A278C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{364A8CDB-A1E4-4305-828C-86019B6BB568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{364A8CDB-A1E4-4305-828C-86019B6BB568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{364A8CDB-A1E4-4305-828C-86019B6BB568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{364A8CDB-A1E4-4305-828C-86019B6BB568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF687560-480B-42E4-8899-E0C36BF4A237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF687560-480B-42E4-8899-E0C36BF4A237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF687560-480B-42E4-8899-E0C36BF4A237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF687560-480B-42E4-8899-E0C36BF4A237}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
