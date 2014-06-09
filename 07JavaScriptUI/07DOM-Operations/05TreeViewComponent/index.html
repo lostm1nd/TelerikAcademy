@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tree view component</title>
+	<script src="../utils/utils.js"></script>
+	<script src="app.js"></script>
+	<style>
+		a {
+			font-size: 1.4em;
+			font-family: Consolas, sans-serif;
+			color: purple;
+			padding: 4px;
+			text-decoration: none;
+		}
+
+		a:hover {
+			cursor: pointer;
+			background-color: lightblue;
+			text-decoration: none;
+		}
+
+		ul ul {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="tree-container">
+		<ul>
+			<li><a>Item</a></li>
+			<li><a>Item</a>
+				<ul>
+					<li><a>Sub Item</a></li>
+					<li><a>Sub Item</a></li>
+					<li><a>Sub Item</a></li>
+				</ul>
+			</li>
+			<li><a>Item</a></li>
+			<li><a>Item</a>
+				<ul>
+					<li><a>Sub Item</a></li>
+					<li><a>Sub Item</a>
+						<ul>
+							<li><a>Sub sub item</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a>Item</a></li>
+		</ul>
+	</div>
+</body>
+</html>

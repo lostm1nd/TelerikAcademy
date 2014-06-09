@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tag Cloud</title>
+	<script src="../utils/utils.js"></script>
+	<script src="app.js"></script>
+	<style>
+		#tag-container {
+			width: 300px;
+			background-color: lightblue;
+			border: 2px outset black;
+			zoom: 1;
+		}
+
+		#tag-container::after {
+			display: block;
+			content: '';
+			height: 0;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<label for="min-font-size">Minimum text size</label>
+	<input type="text" id="min-font-size">
+	<label for="max-font-size">Maximum font size</label>
+	<input type="text" id="max-font-size">
+	<button>Generate tag cloud</button>
+</body>
+</html>
