@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Listview plugin working with templates</title>
+	<style>
+		table, tr, th, td {
+			border: 1px solid black;
+			border-collapse: collapse; 
+		}
+	</style>
+</head>
+<body>
+	<ul id="books-list" data-template="book-item-template">
+		<script id="book-item-template" type="x-handlebars-template">
+			<li class="book-item">
+				<a href="/#books/{{id}}">
+					<strong>{{title}}</strong>
+				</a>
+			</li>
+		</script>
+	</ul>
+
+	<hr />
+
+	<table>
+	  <thead>
+	    <tr>
+	    	<th>#</th>
+	    	<th>Name</th>
+	    	<th>Mark</th>
+    	</tr>
+	  </thead>
+	  <tbody id="students-table" data-template="students-row-template">	
+	  </tbody>
+	</table>
+
+	<script id="students-row-template" type="…">
+	  <tr class="student-row">
+	    <td>{{number}}</td>
+	    <td>{{name}}</td>
+	    <td>{{mark}}</td>
+	  </tr>		
+	</script>
+
+	<script src="../lib/handlebars-v1.3.0.js"></script>
+	<script src="../lib/jquery-2.1.1.min.js"></script>
+	<script src="listview.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
