@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Template Table</title>
+	<style>
+		table, tr, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>N:</th>
+				<th>Title</th>
+				<th>Date #1</th>
+				<th>Date #2</th>
+			</tr>
+		</thead>
+		<tbody>
+			<script type="text/x-handlebars-template" id="row-template">
+				{{#each lectures}}
+				<tr>
+					<td>{{@index}}</td>
+					<td>{{title}}</td>
+					<td>{{date1}}</td>
+					<td>{{date2}}</td>
+				</tr>	
+				{{/each}}
+			</script>
+		</tbody>
+	</table>
+	
+	<script src="../lib/handlebars-v1.3.0.js"></script>
+	<script src="../lib/jquery-2.1.1.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

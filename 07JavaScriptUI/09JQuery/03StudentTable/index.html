@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Student scores</title>
+	<script src="../lib/jquery-2.1.1.min.js"></script>
+	<script src="app.js"></script>
+	<style>
+		form {
+			width: 300px;
+		}
+	</style>
+</head> 
+<body>
+	<form>
+		<fieldset>
+			<legend>Personal data</legend>
+			<label for="fn">First name:</label>
+			<input type="text" id="fn">
+			<br>
+			<label for="ln">Last name:</label>
+			<input type="text" id="ln">
+		</fieldset>
+		<fieldset>
+			<legend>Exam score</legend>
+			<label for="score">Score:</label>
+			<input type="text" id="score">
+		</fieldset>
+		<button id="add">Add to database</button>
+		<button id="generate">Generate table</button>
+	</form>
+	<div id="table-container">
+		
+	</div>
+</body>
+</html>

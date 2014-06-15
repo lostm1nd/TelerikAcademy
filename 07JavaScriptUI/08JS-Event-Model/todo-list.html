@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TODO list</title>
+	<style>
+		section {
+			border: 2px solid black;
+			border-radius: 5px;
+			width: 300px;
+			padding: 10px;
+			text-align: center;
+		}
+
+		ul {
+			width: 50%;
+			margin: 0 auto;
+			list-style-type: none;
+		}
+
+		li {
+			background: url(close.png) no-repeat left center;
+			background-size: 25px 25px;
+			margin-top: 5px;
+			padding-left: 30px;
+		}
+
+		li:hover {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<label for="todo">Add new task:</label>
+	<input type="text" id="todo">
+	<button id="add">Add</button>
+	<section>
+		<h1>TODO List</h1>
+		<button id="show">Show</button>
+		<button id="hide">Hide</button>
+		<ul id="todo-list">
+			
+		</ul>
+	</section>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<script src="../lib/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<div></div>
+
+	<script>
+	$(document).ready(function() {
+		$(document).on('click', appendParagraph);
+
+		function appendParagraph() {
+			$('div').append('new paragraph');
+		}
+	});
+	</script>
+</body>
+</html>
