@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM Module Testing</title>
+</head>
+<body>
+	<header>
+		<h1>Test Page</h1>
+		<nav id="main-nav">
+			<ul>
+				<li>Home</li>
+				<li>About</li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+	</header>
+	<section id="main">
+		<article class="story">
+			<h1>Story 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem qui veniam commodi quis! Nam quibusdam facere quasi aperiam cum alias.</p>
+		</article>
+		<article class="story">
+			<h1>Story 2</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ut, dolor ipsam minima praesentium doloremque illum asperiores optio, deserunt voluptas, inventore cum at beatae perferendis.</p>
+		</article>
+	</section>
+	<footer id="main-footer">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque optio distinctio accusamus ducimus quaerat, animi voluptatum, tempore nostrum quas illum voluptatem exercitationem? Voluptatum necessitatibus ab, autem at atque eius nihil.</p>
+	</footer>
+
+	<script src="dom-module.js"></script>
+	<script>
+	(function() {
+		'use strict';
+
+		var div = document.createElement('div');
+		div.style.width = '50px';
+		div.style.height = '50px';
+		div.style.backgroundColor = 'red';
+
+		DOM_MODULE.appendChild(div, '#main-footer');
+
+		// first child is Home - check the nav
+		// but it is not visible on the page because of this func
+		DOM_MODULE.removeChild('#main-nav ul', 'li:first-child');
+
+		DOM_MODULE.addHandler('#main-nav li', 'click', function() {
+			alert('Clicked a <li> in the <nav>!');
+		});
+
+		var span = document.createElement('span');
+		span.innerHTML = 'SPAN';
+		span.style.marginLeft = '5px';
+		span.style.display = 'inline-block';
+
+		for (var i = 0; i < 101; i+=1) {
+			var clone = span.cloneNode(true);
+			clone.innerHTML += i;
+			DOM_MODULE.appendToBuffer('#main', clone);
+		}
+
+		// undefined
+		console.log(DOM_MODULE.elementBuffer);
+
+	}());
+	</script>
+</body>
+</html>

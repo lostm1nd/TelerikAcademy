@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Console Module</title>
+</head>
+<body>
+	<h1>Check the console</h1>
+
+	<script src="console-module.js"></script>
+	<script>
+	(function(console) {
+		'use strict';
+
+		console.writeLine('Error: Halted traffic ahead!');
+		console.writeLine('Send in the troopers.');
+		console.writeLine(55+10);
+		console.writeLine('Message: ' + (55+10));
+
+		console.writeLine('Message: {0}', 'Hello!');
+		console.writeLine('Error: {0}', 'Something really bad happened.');
+
+		console.writeLine('{0} {1} {2}', 'This', 'should', 'work.');
+
+		console.writeLine('{0} {1} {0}', 'This', 'is');
+
+		console.writeLine('15 + 25 = {0}', (15+25));
+
+	}(CONSOLE_MODULE));
+	</script>
+</body>
+</html>
