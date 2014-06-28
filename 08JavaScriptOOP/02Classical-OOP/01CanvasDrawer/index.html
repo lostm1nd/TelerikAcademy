@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas Drawer Test</title>
+</head>
+<body>
+	<canvas id="paper" width="600" height="400"></canvas>
+	<script src="canvas-drawer.js"></script>
+	<script>
+	(function() {
+		'use strict';
+
+		var drawer = new CanvasDrawer('paper');
+
+		drawer.Rect(50, 50, 100, 70);
+
+		drawer.Circle(150, 120, 20, 'red', 'blue');
+
+		drawer.Line(150, 120, 50, 50);
+	}());
+	</script>
+</body>
+</html>
