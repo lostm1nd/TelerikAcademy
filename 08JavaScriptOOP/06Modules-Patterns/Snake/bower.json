@@ -1,0 +1,25 @@
+{
+  "name": "Snake",
+  "main": "app.js",
+  "version": "0.0.0",
+  "authors": [
+    "Deyan Yanakiev <kliomba@abv.bg>"
+  ],
+  "description": "The classical game of Snake!",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lostm1nd",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.14"
+  }
+}
