@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ComboBox with RequireJS</title>
+	<style>
+		.person-item {
+			border: 1px solid #ccc;
+			background-color: orange;
+			width: 220px;
+			padding: 8px;
+			text-align: center;
+		}
+
+		.person-item:hover {
+			cursor: pointer;
+		}
+
+		.column {
+			float: left;
+			margin-left: 12px;
+		}
+	</style>
+</head>
+<body>
+	<div class="column" id="combo-box"></div>
+	<div class="column" id="combo-box2"></div>
+	
+	<script id="person-template" type="text/x-handlebars-template">
+		{{#people}}
+		<div class="person-item" id="person-item-{{id}}">
+		  <strong class="person-name">{{name}}</strong>
+		  <p class="person-age">{{age}}</p>
+		  <img src="{{avatarUrl}}" width="100" height="133" />
+		</div>
+		{{/people}}
+	</script>
+	<script src="libs/require.js" data-main="app"></script>
+</body>
+</html>
