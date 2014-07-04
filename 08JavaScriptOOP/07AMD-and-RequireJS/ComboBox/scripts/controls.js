@@ -26,8 +26,6 @@ define(['jquery', 'handlebars'], function($) {
       }
     });
 
-    // Using the pure js to get the outer
-    // html since jquery has no such option.
     return $comboBox;
   }
 
