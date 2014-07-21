@@ -1,0 +1,41 @@
+section {
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #cec;
+}
+input {
+	border: 1px solid #ccc;
+	width: 50px;
+	height: 80px;
+	font-size: 2em;
+	text-align: center;
+	margin: 4px 0;
+}
+input:disabled {
+	background-color: #fff;
+	color: #000;
+}
+label {
+	display: inline-block;
+}
+label a {
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	padding: 0 1px;
+	text-indent: -9999px;
+}
+a.up-arrow {
+	background-image: url('images/up-arrow.png');
+}
+a.down-arrow {
+	background-image: url('images/down-arrow.png');
+}
+.top-margin-12 {
+	margin-top: 12px;
+}
+div.results {
+	max-height: 240px;
+	overflow-y: scroll;
+}

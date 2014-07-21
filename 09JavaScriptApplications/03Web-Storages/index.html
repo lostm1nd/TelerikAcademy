@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bulls and Cows</title>
+	<meta name="description" content="A simple number guessing game.">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<section>
+		<h1>Bulls &amp; Cows</h1>
+		<div class="counter">
+			<label>
+				<a href="#" class="up-arrow">Up</a><br>
+				<input type="text" value="1" disabled="disabled" data-min="1" data-max="9"><br>
+				<a href="#" class="down-arrow">Down</a>
+			</label>
+			<label>
+				<a href="#" class="up-arrow">Up</a><br>
+				<input type="text" value="0" disabled="disabled" data-min="0" data-max="9"><br>
+				<a href="#" class="down-arrow">Down</a>
+			</label>
+			<label>
+				<a href="#" class="up-arrow">Up</a><br>
+				<input type="text" value="0" disabled="disabled" data-min="0" data-max="9"><br>
+				<a href="#" class="down-arrow">Down</a>
+			</label>
+			<label>
+				<a href="#" class="up-arrow">Up</a><br>
+				<input type="text" value="0" disabled="disabled" data-min="0" data-max="9"><br>
+				<a href="#" class="down-arrow">Down</a>
+			</label>
+		</div>
+		<div class="top-margin-12">
+			<button id="guess">Make a Guess</button>
+			<button id="highscores">Show scoreboard</button>
+		</div>
+		<div class="results"></div>
+	</section>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
