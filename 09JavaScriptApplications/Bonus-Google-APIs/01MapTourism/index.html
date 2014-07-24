@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Map Tourism</title>
+	<style>
+	#map {
+		width: 100%;
+		height: 500px;
+	}
+	#nav {
+		margin-top: 1em; 
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+	<div id="nav">
+		<button class="prev">Previous city</button>
+		<button class="next">Next City</button>
+	</div>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="libs/q.js"></script>
+	<script src="libs/city-data.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
