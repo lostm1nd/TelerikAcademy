@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cross browser getJSON and postJSON</title>
+</head>
+<body>
+	<script src="libs/q.js"></script>
+	<script src="http-requests.js"></script>
+	<script>
+	XHRModule.getJSON('http://localhost:3000/students')
+		.then(function success(data) {
+			console.log(data);
+		}, function error(err) {
+			console.log(err);
+		});
+
+	XHRModule.postJSON('http://localhost:3000/students',{
+		data: {
+			name: 'Peter',
+			grade: 88 }
+		})
+		.then(function succes(data) {
+			console.log(data);
+		}, function error(err) {
+			console.log(err);
+		});
+	</script>
+</body>
+</html>

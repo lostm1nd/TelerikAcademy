@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Managing Students</title>
+	<style>
+	#site-wrap {
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	ul {
+		list-style-type: none;
+	}
+	ul li {
+		margin-top: 8px;
+	}
+	.remove {
+		margin-left: 12px;
+		color: red;
+		display: inline-block;
+	}
+	.remove:hover {
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div id="site-wrap">
+	<header>
+		<label>
+			<span>Add new student</span>
+			<input type="text" placeholder="Name" id="name">
+			<input type="text" placeholder="Score" id="grade">
+		</label>
+		<button id="add-student">Add</button>
+	</header>
+	<article>
+		<ul id="students-container">
+		</ul>
+	</article>
+</div>
+
+<script src="libs/jquery-2.0.2.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
