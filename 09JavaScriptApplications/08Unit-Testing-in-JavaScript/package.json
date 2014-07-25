@@ -1,0 +1,24 @@
+{
+  "name": "08Unit-Testing-in-JavaScript",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deyan Yanakiev <kliomba@abv.bg>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "karma-chai": "^0.1.0",
+    "mocha": "^1.21.0",
+    "karma": "^0.12.17",
+    "karma-mocha": "^0.1.6",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-ie-launcher": "^0.1.5",
+    "karma-firefox-launcher": "^0.1.3"
+  }
+}
