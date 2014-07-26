@@ -1,0 +1,73 @@
+/* Colour pallete
+* gray -> #e8e4d8
+* blue -> #619fab
+* lightblue -> #a1c0c4
+*/
+
+html {
+	font-size: 67.5%;
+	font-family: Futura, Helvetica, sans-serif;
+}
+
+html, body, div, header, section, footer, form, p {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header, section, footer {
+	display: block;
+}
+
+#wrapper {
+	width: 80%;
+	max-width: 640px;
+	margin: 12px auto;
+	border-radius: 12px;
+	background-color: #f2e9e1;
+	text-align: center;
+	color: #45484c;
+}
+
+header {
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	background-color: #619fab;
+	padding: 6px 8px;
+}
+
+#main {
+	background-color: #e8e4d8;
+	border-left: 4px solid #619fab;
+	border-right: 4px solid #619fab;
+}
+
+form {
+	padding: 6px 8px;
+}
+
+form input[type=submit] {
+	margin-top: 12px;
+	text-transform: uppercase;
+	font-size: 95%;
+	background-color: #a1c0c4;
+	border-radius: 6px;
+	border: none;
+	padding: 4px 6px;
+}
+
+form input[type=submit]:hover {
+	cursor: pointer;
+}
+
+.label-text {
+	margin-bottom: 6px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+footer {
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	background-color: #619fab;
+}
