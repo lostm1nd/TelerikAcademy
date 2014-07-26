@@ -3,7 +3,7 @@
 
   var app = Sammy('#main', function() {
     this.get('#/', function(context) {
-      context.load('templates/login-form.html');
+      context.$element().load('templates/login-form.html');
     });
   });
 
