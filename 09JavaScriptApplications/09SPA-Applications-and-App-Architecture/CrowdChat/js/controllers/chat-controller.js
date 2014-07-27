@@ -42,4 +42,6 @@ define(['jquery', 'q', 'mustache'], function($, Q, Mustache) {
     var posts = getPosts();
     loadPosts(posts);
   };
+
+  return init;
 });
