@@ -16,7 +16,7 @@ define(function() {
   };
 
   var enterChatBtnClick = function() {
-    var nick = $viewContainer.find('#login').find('input').val();
+    var nick = $viewContainer.find('#nick').val();
 
     if (isValidNikcname(nick)) {
       window.location('#/chat');
