@@ -28,7 +28,7 @@ define(function() {
   var loadView = function() {
     $viewContainer.empty();
     $viewContainer.load('views/login-view.html');
-    $viewContainer.find('#login').find('button').on('click', enterChatBtnClick);
+    $viewContainer.on('click', '#login', enterChatBtnClick);
   };
 
   var init = function(elementId) {
