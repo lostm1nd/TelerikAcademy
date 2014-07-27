@@ -58,6 +58,27 @@ header {
 	padding: 4px 6px;
 }
 
+#messages {
+	max-height: 500px;
+	overflow-y: scroll;
+	word-wrap: break-word;
+	text-align: left;
+}
+
+#messages p {
+	margin-bottom: 6px;
+	border-radius: 8px;
+}
+
+#messages .by {
+	font-weight: bold;
+	background-color: #a1c0c4;
+}
+
+#messages .msg {
+	margin-left: 6px;
+}
+
 #send-message input {
 	width: 80%;
 	margin: 0;

@@ -2,7 +2,8 @@ define(function() {
   'use strict';
 
   var appContext = null,
-      $viewContainer = null;
+      $viewContainer = null,
+      nickname = null;
 
   var isValidNikcname = function(nick) {
     if (typeof nick !== 'string') {
@@ -16,10 +17,15 @@ define(function() {
     return true;
   };
 
+  var getNick = function() {
+    return nickname;
+  };
+
   var enterChatBtnClick = function() {
     var nick = $viewContainer.find('#nick').val();
 
     if (isValidNikcname(nick)) {
+      nickname = nick;
       appContext.redirect('#/chat');
     } else {
       alert('Nickname must be between 2 and 14 symbols');
@@ -39,6 +45,7 @@ define(function() {
   };
 
   return {
-    init: init
+    init: init,
+    getNick: getNick
   };
 });

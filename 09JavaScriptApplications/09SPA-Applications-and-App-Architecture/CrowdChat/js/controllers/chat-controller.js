@@ -1,4 +1,4 @@
-define(['jquery', 'q', 'mustache'], function($, Q, Mustache) {
+define(['jquery', 'q', 'mustache', 'login'], function($, Q, Mustache, loginController) {
   'use strict';
 
   var POST_URL = 'http://crowd-chat.herokuapp.com/posts',
@@ -20,26 +20,53 @@ define(['jquery', 'q', 'mustache'], function($, Q, Mustache) {
   };
 
   var loadPosts = function(posts) {
-    $.get('templates/post.html')
-      .then(function success(template) {
-      var rendered = Mustache.render($(template).html(), {posts: posts});
-
-      $viewContainer.empty();
+    $.ajax({
+      type: 'GET',
+      url: 'templates/post.html',
+      dataType: 'html'
+    })
+    .then(function success(template) {
+      var rendered = Mustache.render(template, {posts: posts});
+      $viewContainer.find('#messages').empty();
       $viewContainer.find('#messages').append(rendered);
     }, function error(err) {
       console.log(err);
     });
+
+  };
+
+  var onSendBtnClick = function() {
+    var msg = $viewContainer.find('#chat').find('input').val();
+    var nick = loginController.getNick();
+
+    $.post(POST_URL, {
+      text: msg,
+      user: nick
+    }, function success(msg) {
+      getPosts()
+      .then(function success(posts) {
+        loadPosts(posts);
+      }, function error(err) {
+        console.log(err);
+      });
+    }, 'json');
+
+    $viewContainer.find('#chat').find('input').val('');
   };
 
   var init = function(app) {
     $viewContainer = app.$element();
+
     loadView();
+
     getPosts()
       .then(function success(posts) {
         loadPosts(posts);
       }, function error(err) {
         console.log(err);
       });
+
+    $viewContainer.on('click', '#send', onSendBtnClick);
   };
 
   return {
