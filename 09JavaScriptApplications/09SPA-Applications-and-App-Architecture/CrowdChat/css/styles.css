@@ -9,7 +9,7 @@ html {
 	font-family: Futura, Helvetica, sans-serif;
 }
 
-html, body, div, header, section, footer, form, p {
+html, body, div, header, section, footer, form, p, input, button {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -42,28 +42,30 @@ header {
 	border-right: 4px solid #619fab;
 }
 
-form {
+#login {
 	padding: 6px 8px;
 }
 
-form input[type=submit] {
-	margin-top: 12px;
-	text-transform: uppercase;
-	font-size: 95%;
-	background-color: #a1c0c4;
-	border-radius: 6px;
-	border: none;
-	padding: 4px 6px;
-}
-
-form input[type=submit]:hover {
-	cursor: pointer;
-}
-
-.label-text {
+#login .label-text {
 	margin-bottom: 6px;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+#login button {
+	margin-top: 12px;
+	text-transform: uppercase;
+	padding: 4px 6px;
+}
+
+#send-message input {
+	width: 80%;
+	margin: 0;
+}
+
+#send-message button {
+	width: 19%;
+	margin: 0;
 }
 
 footer {
