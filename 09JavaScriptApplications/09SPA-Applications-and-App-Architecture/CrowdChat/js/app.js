@@ -2,7 +2,7 @@ require.config({
   paths: {
     'jquery': '../lib/jquery-2.1.1.min',
     'sammy': '../lib/sammy',
-    'mustache': '..lib/mustache',
+    'mustache': '../lib/mustache',
     'q': '../lib/q',
     'login': 'controllers/login-controller',
     'chat': 'controllers/chat-controller'
