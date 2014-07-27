@@ -43,5 +43,7 @@ define(['jquery', 'q', 'mustache'], function($, Q, Mustache) {
     loadPosts(posts);
   };
 
-  return init;
+  return {
+    init: init
+  };
 });

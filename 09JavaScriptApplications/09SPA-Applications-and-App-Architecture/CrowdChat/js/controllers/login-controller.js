@@ -44,5 +44,7 @@ define(function() {
     loadView();
   };
 
-  return init;
+  return {
+    init: init
+  };
 });
