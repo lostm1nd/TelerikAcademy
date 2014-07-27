@@ -10,22 +10,18 @@ define(function() {
       return false;
     }
 
-    if (nick.length < 2 && 14 < nick.length) {
+    if (nick.length < 2 || nick.length > 14) {
       return false;
     }
 
     return true;
   };
 
-  var getNick = function() {
-    return nickname;
-  };
-
   var enterChatBtnClick = function() {
     var nick = $viewContainer.find('#nick').val();
 
     if (isValidNikcname(nick)) {
-      nickname = nick;
+      localStorage.setItem('Nickname', nick);
       appContext.redirect('#/chat');
     } else {
       alert('Nickname must be between 2 and 14 symbols');
@@ -45,7 +41,6 @@ define(function() {
   };
 
   return {
-    init: init,
-    getNick: getNick
+    init: init
   };
 });

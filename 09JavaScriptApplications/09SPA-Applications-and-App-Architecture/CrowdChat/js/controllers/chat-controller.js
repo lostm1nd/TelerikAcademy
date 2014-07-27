@@ -1,4 +1,4 @@
-define(['jquery', 'q', 'mustache', 'login'], function($, Q, Mustache, loginController) {
+define(['jquery', 'mustache'], function($, Mustache) {
   'use strict';
 
   var POST_URL = 'http://crowd-chat.herokuapp.com/posts',
@@ -9,46 +9,35 @@ define(['jquery', 'q', 'mustache', 'login'], function($, Q, Mustache, loginContr
     $viewContainer.load('views/chat-view.html');
   };
 
-  var getPosts = function() {
-    var deferred = Q.defer();
-
-    $.getJSON(POST_URL, function(posts) {
-      deferred.resolve(posts);
-    });
-
-    return deferred.promise;
-  };
-
-  var loadPosts = function(posts) {
-    $.ajax({
-      type: 'GET',
-      url: 'templates/post.html',
-      dataType: 'html'
-    })
-    .then(function success(template) {
-      var rendered = Mustache.render(template, {posts: posts});
+  var loadPosts = function() {
+    $.when(
+      $.getJSON(POST_URL),
+      $.ajax({
+        type: 'GET',
+        url: 'templates/post.html',
+        dataType: 'html'
+      })
+    )
+    .then(function success(posts, template) {
+      var rendered = Mustache.render(template[0], {posts: posts[0]});
       $viewContainer.find('#messages').empty();
       $viewContainer.find('#messages').append(rendered);
     }, function error(err) {
       console.log(err);
     });
 
+     $viewContainer.find('#messages').scrollTop($viewContainer.find('#messages')[0].scrollHeight);
   };
 
   var onSendBtnClick = function() {
     var msg = $viewContainer.find('#chat').find('input').val();
-    var nick = loginController.getNick();
+    var nick = localStorage.getItem('Nickname');
 
     $.post(POST_URL, {
       text: msg,
       user: nick
     }, function success(msg) {
-      getPosts()
-      .then(function success(posts) {
-        loadPosts(posts);
-      }, function error(err) {
-        console.log(err);
-      });
+      loadPosts();
     }, 'json');
 
     $viewContainer.find('#chat').find('input').val('');
@@ -59,12 +48,7 @@ define(['jquery', 'q', 'mustache', 'login'], function($, Q, Mustache, loginContr
 
     loadView();
 
-    getPosts()
-      .then(function success(posts) {
-        loadPosts(posts);
-      }, function error(err) {
-        console.log(err);
-      });
+    setInterval(loadPosts, 1500);
 
     $viewContainer.on('click', '#send', onSendBtnClick);
   };
