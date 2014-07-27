@@ -20,27 +20,26 @@ define(['jquery', 'q', 'mustache'], function($, Q, Mustache) {
   };
 
   var loadPosts = function(posts) {
-    $.get('templates/posts.mst', function(template) {
-      var rendered = Mustache.render(template, {posts: posts});
+    $.get('templates/post.html')
+      .then(function success(template) {
+      var rendered = Mustache.render($(template).html(), {posts: posts});
 
       $viewContainer.empty();
       $viewContainer.find('#messages').append(rendered);
+    }, function error(err) {
+      console.log(err);
     });
   };
 
-  var init = function(elementId) {
-    if (!elementId) {
-      throw new Error('Id selector must be provided.');
-    }
-
-    if (!$(elementId)) {
-      throw new Error('The provided id is not valid.');
-    }
-
-    $viewContainer = $(elementId);
+  var init = function(app) {
+    $viewContainer = app.$element();
     loadView();
-    var posts = getPosts();
-    loadPosts(posts);
+    getPosts()
+      .then(function success(posts) {
+        loadPosts(posts);
+      }, function error(err) {
+        console.log(err);
+      });
   };
 
   return {

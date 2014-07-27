@@ -1,9 +1,0 @@
-{{#posts}}
-<p>
-	<span>{{by}}</span>
-	<span>{{text}}</text>
-</p>
-{{/posts}}
-{{^posts}}
-	<p>No recent posts</p>
-{{/posts}}

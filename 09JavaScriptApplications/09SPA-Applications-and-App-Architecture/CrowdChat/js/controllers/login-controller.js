@@ -1,7 +1,8 @@
 define(function() {
   'use strict';
 
-  var $viewContainer = null;
+  var appContext = null,
+      $viewContainer = null;
 
   var isValidNikcname = function(nick) {
     if (typeof nick !== 'string') {
@@ -19,7 +20,7 @@ define(function() {
     var nick = $viewContainer.find('#nick').val();
 
     if (isValidNikcname(nick)) {
-      window.location('#/chat');
+      appContext.redirect('#/chat');
     } else {
       alert('Nickname must be between 2 and 14 symbols');
     }
@@ -31,16 +32,9 @@ define(function() {
     $viewContainer.on('click', '#login', enterChatBtnClick);
   };
 
-  var init = function(elementId) {
-    if (!elementId) {
-      throw new Error('Id selector must be provided.');
-    }
-
-    if (!$(elementId)) {
-      throw new Error('The provided id is not valid.');
-    }
-
-    $viewContainer = $(elementId);
+  var init = function(app) {
+    appContext = app;
+    $viewContainer = app.$element();
     loadView();
   };
 

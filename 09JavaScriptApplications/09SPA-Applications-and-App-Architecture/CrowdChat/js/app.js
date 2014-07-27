@@ -14,11 +14,11 @@ require(['jquery', 'sammy', 'login', 'chat'], function($, sammy, loginController
   var app = sammy('#main', function() {
 
     this.get('#/', function(context) {
-      loginController.init('#main');
+      loginController.init(context);
     });
 
     this.get('#/chat', function(context) {
-      chatController.init('#main');
+      chatController.init(context);
     });
 
   });
