@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="students-style.xsl"?>
+<students
+  xmlns="urn:students">
+  <student enrolled="2011-09-15">
+    <name>Ivan</name>
+    <sex>Male</sex>
+    <birthdate>1991-04-05</birthdate>
+    <phone>0888000111</phone>
+    <email>ivan@example.com</email>
+    <course>1</course>
+    <speciality>Mathematics</speciality>
+    <facultynumber>F1000</facultynumber>
+    <exams>
+      <exam passed="true">
+        <name>Algebra</name>
+        <tutor>Georgiev</tutor>
+        <score>4.5</score>
+      </exam>
+      <exam passed="false">
+        <name>Geometry</name>
+        <tutor>Georgiev</tutor>
+      </exam>
+    </exams>
+  </student>
+  <student enrolled="2010-09-15">
+    <name>Ivanka</name>
+    <sex>Female</sex>
+    <birthdate>1992-05-04</birthdate>
+    <phone>0888000222</phone>
+    <email>ivanka@example.com</email>
+    <course>2</course>
+    <speciality>Mathematics</speciality>
+    <facultynumber>F2000</facultynumber>
+    <exams>
+      <exam passed="true">
+        <name>Algebra</name>
+        <tutor>Georgiev</tutor>
+        <score>5.5</score>
+      </exam>
+      <exam passed="true">
+        <name>Geometry</name>
+        <tutor>Georgiev</tutor>
+        <score>6</score>
+      </exam>
+    </exams>
+  </student>
+</students>

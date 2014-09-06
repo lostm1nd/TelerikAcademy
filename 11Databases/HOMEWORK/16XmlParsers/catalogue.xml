@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<catalogue>
+  <album>
+    <title>Eros The One</title>
+    <artist>Eros Ramazzotti</artist>
+    <country>EU</country>
+    <producer>BMG</producer>
+    <price>22.90</price>
+    <year>1995</year>
+    <songs>
+      <song>
+        <title>Eros The One - song 1</title>
+        <duration>5:50</duration>
+      </song>
+      <song>
+        <title>Eros The One - song 2</title>
+        <duration>5:51</duration>
+      </song>
+      <song>
+        <title>Eros The One - song 3</title>
+        <duration>5:52</duration>
+      </song>
+      <song>
+        <title>Eros The One - song 4</title>
+        <duration>5:53</duration>
+      </song>
+      <song>
+        <title>Eros The One - song 5</title>
+        <duration>5:54</duration>
+      </song>
+      <song>
+        <title>Eros The One - song 6</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Empire Burlesque</title>
+    <artist>Bob Dylan</artist>
+    <country>USA</country>
+    <producer>Columbia</producer>
+    <price>10.90</price>
+    <year>1985</year>
+    <songs>
+      <song>
+        <title>Empire Burlesque - song 1</title>
+        <duration>2:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque - song 2</title>
+        <duration>3:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque - song 3</title>
+        <duration>4:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque - song 5</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Hide your heart</title>
+    <artist>Bonnie Tyler</artist>
+    <country>UK</country>
+    <producer>CBS Records</producer>
+    <price>9.90</price>
+    <year>1988</year>
+    <songs>
+      <song>
+        <title>Hide your heart - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 6</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Hide your heart - song 7</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Greatest Hits</title>
+    <artist>Dolly Parton</artist>
+    <country>USA</country>
+    <producer>RCA</producer>
+    <price>9.90</price>
+    <year>1982</year>
+    <songs>
+      <song>
+        <title>Greatest Hits - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 6</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 7</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 8</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Greatest Hits - song 9</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Still got the blues</title>
+    <artist>Gary Moore</artist>
+    <country>UK</country>
+    <producer>Virgin records</producer>
+    <price>10.20</price>
+    <year>1990</year>
+    <songs>
+      <song>
+        <title>Still got the blues - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Still got the blues - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Still got the blues - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Still got the blues - song 4</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Eros</title>
+    <artist>Eros Ramazzotti</artist>
+    <country>EU</country>
+    <producer>BMG</producer>
+    <price>25.90</price>
+    <year>1997</year>
+    <songs>
+      <song>
+        <title>Eros - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros - song 6</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>One night only</title>
+    <artist>Bee Gees</artist>
+    <country>UK</country>
+    <producer>Polydor</producer>
+    <price>10.90</price>
+    <year>1998</year>
+    <songs>
+      <song>
+        <title>One night only - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>One night only - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>One night only - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>One night only - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>One night only - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>One night only - song 6</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Sylvias Mother</title>
+    <artist>Dr.Hook</artist>
+    <country>UK</country>
+    <producer>CBS</producer>
+    <price>8.10</price>
+    <year>1973</year>
+    <songs>
+      <song>
+        <title>Sylvias Mother - song 1</title>
+        <duration>2:45</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 2</title>
+        <duration>2:46</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 6</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 7</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 8</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 9</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Sylvias Mother - song 10</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Eros The Great</title>
+    <artist>Eros Ramazzotti</artist>
+    <country>EU</country>
+    <producer>BMG</producer>
+    <price>22.90</price>
+    <year>1997</year>
+    <songs>
+      <song>
+        <title>Eros The Great - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros The Great - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros The Great - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros The Great - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros The Great - song 5</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Eros The Great - song 6</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Empire Burlesque Remade</title>
+    <artist>Bob Dylan</artist>
+    <country>USA</country>
+    <producer>Columbia</producer>
+    <price>10.90</price>
+    <year>1985</year>
+    <songs>
+      <song>
+        <title>Empire Burlesque Remade - song 1</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque Remade - song 2</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque Remade - song 3</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque Remade - song 4</title>
+        <duration>5:55</duration>
+      </song>
+      <song>
+        <title>Empire Burlesque Remade - song 5</title>
+        <duration>5:55</duration>
+      </song>
+    </songs>
+  </album>
+</catalogue>

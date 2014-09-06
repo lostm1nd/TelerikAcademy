@@ -1,0 +1,10 @@
+﻿<Window x:Class="Chat.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox Name="message" HorizontalAlignment="Left" Height="30" Margin="23,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
+        <Button Content="Send" HorizontalAlignment="Left" Height="30" Margin="401,280,0,0" VerticalAlignment="Top" Width="77" Click="SendMessage"/>
+        <ListBox Name="messageContainer" HorizontalAlignment="Left" Height="265" Margin="23,10,0,0" VerticalAlignment="Top" Width="455" Background="#FFF9F0F0"/>
+    </Grid>
+</Window>
