@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01GetDayService", "GetDayService\01GetDayService.csproj", "{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02GetDayService.Client", "GetDayService.Client\02GetDayService.Client.csproj", "{9AD7F033-ECA0-4FB1-8A8E-D7B989AC1244}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7} = {BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03StringManipulationService", "StringManipulationService\03StringManipulationService.csproj", "{062FA877-6217-48A7-B1A6-B085722D63CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04StringManipulationService.Host", "StringManipulationService.Host\04StringManipulationService.Host.csproj", "{C2C66BAC-3FC2-4D55-A4C0-9A65B53E5862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05StringManipulationClient", "StringManipulationClient\05StringManipulationClient.csproj", "{52BD3723-8507-45AA-87FF-078A3A116D97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFAEFE2-DE5F-4FCF-BF1F-7EF4860EC7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD7F033-ECA0-4FB1-8A8E-D7B989AC1244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD7F033-ECA0-4FB1-8A8E-D7B989AC1244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD7F033-ECA0-4FB1-8A8E-D7B989AC1244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD7F033-ECA0-4FB1-8A8E-D7B989AC1244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062FA877-6217-48A7-B1A6-B085722D63CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062FA877-6217-48A7-B1A6-B085722D63CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062FA877-6217-48A7-B1A6-B085722D63CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062FA877-6217-48A7-B1A6-B085722D63CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C66BAC-3FC2-4D55-A4C0-9A65B53E5862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C66BAC-3FC2-4D55-A4C0-9A65B53E5862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C66BAC-3FC2-4D55-A4C0-9A65B53E5862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C66BAC-3FC2-4D55-A4C0-9A65B53E5862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BD3723-8507-45AA-87FF-078A3A116D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BD3723-8507-45AA-87FF-078A3A116D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BD3723-8507-45AA-87FF-078A3A116D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BD3723-8507-45AA-87FF-078A3A116D97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
