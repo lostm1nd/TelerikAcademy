@@ -1,0 +1,12 @@
+extends ./../layout
+
+block main-content
+
+  div(class="panel panel-default")
+    div(class="panel-heading")
+      h3(class="panel-title")
+        | #{post.title}
+    div(class="panel-body")
+      | #{post.text}
+    div(class="panel-footer")
+     | published on #{moment(post.published).format('DD.MM.YYYY')} by #{post.author.name}

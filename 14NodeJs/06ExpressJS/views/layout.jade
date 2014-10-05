@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title
+      | ExpressJS Blog
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/css/app.css")
+  body
+    nav(class="navbar navbar-default" role="navigation")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          a(class="navbar-brand" href="/")
+            | BlogMe
+        div(class="container-fluid")
+          ul(class="nav navbar-nav")
+            li
+              a(href="/posts")
+                | Posts
+          ul(class="nav navbar-nav navbar-right")
+            li
+              a(href="/users/login")
+                | Login
+            li
+              a(href="/users/register")
+                | Register
+
+    div(class="container")
+      block main-content
+
+    footer(class="text-center")
+      | Write your wrongs.
+
+    script(src="/js/jquery-2.1.1.min.js")
+    script(src="/js/bootstrap.min.js")

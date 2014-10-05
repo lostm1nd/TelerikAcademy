@@ -1,0 +1,18 @@
+extends ./../layout
+
+block main-content
+  h1
+    | Posts
+
+  if (posts.length)
+    ul(class="list-group")
+      each post in posts
+        li(class="list-group-item")
+          a(href="/posts/#{post._id}")
+            | #{post.title}
+  else
+    h3
+      | Currently there are no posts
+
+  a(class="btn btn-info" href="/posts/create")
+    | Create post

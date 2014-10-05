@@ -1,0 +1,26 @@
+extends ./../layout
+
+block main-content
+  form(class="form-horizontal" method="POST" action="/posts/create" name="create-post")
+    fieldset
+      legend
+        | Create new post
+
+      div(class="form-group")
+        label(class="col-md-4 control-label" for="#title")
+          | Title
+        div(class="col-md-8")
+          input(type="text" class="from-control" id="title" name="title" placeholder="Title")
+
+      div(class="form-group")
+        label(class="col-md-4 control-label" for="text")
+          | Text
+        div(class="col-md-8")
+          textarea(class="from-control" id="text" name="text" placeholder="Text goes here")
+
+      div(class="form-group")
+        div(class="col-md-2 col-md-offset-4")
+          input(type="submit" value="Create" class="btn btn-info")
+        div(class="col-md-2")
+          a(class="btn btn-info" href="/")
+            | Cancel

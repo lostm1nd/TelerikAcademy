@@ -1,0 +1,31 @@
+extends ./../layout
+
+block main-content
+  form(class="form-horizontal" method="POST" action="/users/register" name="register-form")
+    fieldset
+      legend
+        | Register new user
+      div(class="form-group")
+        label(class="col-md-4 control-label" for="#name")
+          | Name
+        div(class="col-md-8")
+          input(type="text" class="from-control" id="name" name="name" placeholder="Name")
+
+      div(class="form-group")
+        label(class="col-md-4 control-label" for="#email")
+          | Email
+        div(class="col-md-8")
+          input(type="email" class="from-control" id="email" name="email" placeholder="Email")
+
+      div(class="form-group")
+        label(class="col-md-4 control-label" for="#password")
+          | Password
+        div(class="col-md-8")
+          input(type="password" class="from-control" id="password" name="password" placeholder="Password")
+
+      div(class="form-group")
+        div(class="col-md-2 col-md-offset-4")
+          input(type="submit" value="Register" class="btn btn-info")
+        div(class="col-md-2")
+          a(class="btn btn-info" href="/")
+            | Cancel
