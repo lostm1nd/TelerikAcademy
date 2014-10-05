@@ -1,0 +1,32 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{tripDetails.driverName}} - {{tripDetails.departureDate | date}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+    	<div class="com-md-4">
+    		<p><strong>From</strong></p>
+    		<p>{{tripDetails.from}}</p>
+    	</div>
+    	<div class="com-md-4">
+    		<p><strong>To</strong></p>
+    		<p>{{tripDetails.to}}</p>
+    	</div>
+    	<div class="com-md-4">
+    		<p><strong>Number of free seats</strong></p>
+    		<p>{{tripDetails.numberOfFreeSeats}}</p>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-8">
+    		<p><strong>Passengers</strong></p>
+    		<p ng-repeat="p in tripDetails.passengers">{{p}}</p>
+    	</div>
+    	<div class="col-md-4">
+    		<button class="btn btn-info" ng-click="joinTrip()" ng-disable="{{tripDetails.numberOfFreeSeats <= 0}}">
+    			Join trip
+			</button>
+    	</div>
+    </div>
+  </div>
+</div>

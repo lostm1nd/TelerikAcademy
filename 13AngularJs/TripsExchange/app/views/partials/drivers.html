@@ -1,0 +1,34 @@
+<div class="row driver-row" ng-show="isAuthenticated">
+  <div class="col-md-6 pull-left">
+    Filter by name
+    <input type="text" ng-model="search.name">
+  </div>
+  <div class="col-md-6 pull-right" pages>
+  </div>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Drivers</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+    	<thead>
+    		<th>Name</th>
+    		<th>Upcoming trips</th>
+    		<th>Total trips</th>
+        <th ng-show="isAuthenticated">View info</th>
+    	</thead>
+    	<tbody>
+    		<tr ng-repeat="driver in drivers | filter:search.name">
+    			<td>{{driver.name}}</td>
+    			<td>{{driver.numberOfUpcomingTrips}}</td>
+    			<td>{{driver.numberOfTotalTrips}}</td>
+          <td ng-show="isAuthenticated">
+            <button class="btn btn-info" ng-click="viewInfo(driver)">Info</button>
+          </td>
+    		</tr>
+    	</tbody>
+    </table>
+  </div>
+</div>

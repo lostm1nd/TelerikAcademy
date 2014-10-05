@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trip Exchange SPA</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="../lib/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="../lib/jquery-ui/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body ng-app="webApp">
+  <div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/#/" class="navbar-brand">Trips Exchange</a>            
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main" menu></div>
+    </div>
+  </div>
+
+  <div ng-view class="centered container-fluid"></div>
+
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.min.js"></script>
+  <script src="lib/toastr/toastr.min.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+
+  <script src="js/app.js"></script>
+  
+  <script src="js/controllers/menu-controller.js"></script>
+  <script src="js/controllers/home-controller.js"></script>
+  <script src="js/controllers/login-controller.js"></script>
+  <script src="js/controllers/registration-controller.js"></script>
+  <script src="js/controllers/drivers-controller.js"></script>
+  <script src="js/controllers/driver-details-controller.js"></script>
+  <script src="js/controllers/trips-controller.js"></script>
+  <script src="js/controllers/trip-details-controller.js"></script>
+  <script src="js/controllers/create-trip-controller.js"></script>
+
+  <script src="js/services/account/user.js"></script>  
+  <script src="js/services/account/identity.js"></script>
+  <script src="js/services/account/authorization.js"></script>
+  <script src="js/services/notifier.js"></script>
+  <script src="js/services/trips-service.js"></script>
+  <script src="js/services/stats-service.js"></script>
+  <script src="js/services/drivers-service.js"></script>
+  <script src="js/services/drivers-cache.js"></script>
+  <script src="js/services/cities-service.js"></script>
+
+  <script src="js/directives/menu.js"></script>
+  <script src="js/directives/pages.js"></script>
+  <script src="js/directives/datepicker.js"></script>
+
+  <script src="js/filters/icon.js"></script>
+  <script src="js/filters/date.js"></script>
+</body>
+</html>

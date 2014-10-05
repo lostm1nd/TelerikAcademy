@@ -1,0 +1,81 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Trips</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" ng-show="isAuthenticated">
+      <div class="col-md-2">
+        <strong>Sort</strong>
+        <select class="form-control" ng-model="query.orderBy" ng-change="createQuery(query)">
+          <option value="">Choose ordering</option>
+          <option value="departureDate">Date</option>
+          <option value="driverName">Driver</option>
+          <option value="numberOfFreeSeats">Number of seats</option>
+          <option value="from">From</option>
+          <option value="to">To</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <strong>Order Type</strong>
+        <select class="form-control" ng-model="query.orderType" ng-change="createQuery(query)">
+          <option value="">Choose ordering</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <strong>From</strong>
+        <select ng-model="query.fromCity" ng-change="createQuery(query)" class="form-control">
+          <option value="">Choose City</option>
+          <option ng-repeat="city in allCities" value="{{city}}">{{city}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <strong>To</strong>
+        <select ng-model="query.toCity" ng-change="createQuery(query)" class="form-control">
+          <option value="">Choose City</option>
+          <option ng-repeat="city in allCities" value="{{city}}">{{city}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label>
+          <input type="checkbox" ng-model="query.onlyMine" ng-change="createQuery(query)"> Only mine
+        </label>
+      </div>
+      <div class="col-md-2">
+        <label>
+          <input type="checkbox" ng-model="query.finished" ng-change="createQuery(query)"> Include finished
+        </label>
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <th>Driver</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Departure time</th>
+        <th ng-show="isAuthenticated">Is mine</th>
+        <th ng-show="isAuthenticated">View info</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="trip in trips">
+          <td>{{trip.driverName}}</td>
+          <td>{{trip.from}}</td>
+          <td>{{trip.to}}</td>
+          <td>{{trip.departureDate | date}}</td>
+          <td ng-show="isAuthenticated">
+            <img src="" alt="" ng-src="{{trip.isMine | icon}}" class="yes-no-icon">
+          </td>
+          <td ng-show="isAuthenticated"><button class="btn btn-info" ng-click="viewInfo(trip)">Info</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row" ng-show="isAuthenticated">
+      <div class="col-md-6">
+        <button ng-click="createTrip()" class="btn btn-info">Create trip</button>
+      </div>
+      <div class="col-md-6 pull-right" pages>
+      </div>
+    </div>
+  </div>
+</div>
