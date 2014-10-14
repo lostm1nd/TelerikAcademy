@@ -1,0 +1,27 @@
+extends ./layout
+
+block main-content
+  .jumbotron
+    h2 Powered by ExpressJS
+    p Telerik Academy Event System
+
+  section
+    h1.text-center Past events
+    table.table.table-striped.table-hover
+      thead
+        if (!pastEvents.length)
+          tr
+            th No past events
+        else
+          tr
+            th Title
+            th Description
+            th Organization points
+            th Venue points
+      tbody
+        each event in pastEvents
+          tr
+            td= event.title
+            td= event.description
+            td= event.points.organization
+            td= event.points.venue

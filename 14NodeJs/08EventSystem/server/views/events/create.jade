@@ -1,0 +1,65 @@
+extends ./../layout
+
+block main-content
+  form(class="form-horizontal" method="POST")
+    fieldset
+      legend Create an event
+
+      .form-group
+        label(class="col-md-4 control-label" for="title") Title
+        .col-md-8
+          input(type="text" class="form-control" id="title"
+            name="title" placeholder="Title" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="description") Description
+        .col-md-8
+          textarea(class="form-control" id="description"
+            name="description" placeholder="Description" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="date") Date
+        .col-md-8
+          input(type="datetime-local" class="form-control" id="date"
+            name="date" placeholder="Date" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="category") Category
+        .col-md-8
+          select(class="form-control" id="category" name="category" required="required")
+            option(value="sports") Sports
+            option(value="free time") Free Time
+            option(value="academy") Academy related
+            option(value="party") Party
+
+      .form-group
+        label(class="col-md-4 control-label" for="location") Location
+        .col-md-4
+          input(type="text" class="form-control" id="location" name="location[latitude]")
+        .col-md-4
+          input(type="text" class="form-control" name="location[longitude]")
+
+      .form-group
+        label(class="col-md-4 control-label" for="initiative") Initiative
+        .col-md-8
+          select(class="form-control" id="initiative" name="type[initiative]")
+            option(value="") Select initiative
+            option(value="Software Academy") Software Academy
+            option(value="Algo Academy") Algo Academy
+            option(value="School Academy") School Academy
+            option(value="Kids Academy") Kids Academy
+
+      .form-group
+        label(class="col-md-4 control-label" for="season") Season
+        .col-md-8
+          select(class="form-control" id="season" name="type[season]")
+            option(value="") Select season
+            option(value="Started 2010") Started 2010
+            option(value="Started 2011") Started 2011
+            option(value="Started 2012") Started 2012
+            option(value="Started 2013") Started 2013
+
+      .form-group
+        .col-md-8.col-md-offset-4
+          input(type="submit" value="Create" class="btn btn-primary")
+          a(class="btn btn-default" style="margin-left: 12px" href="/") Cancel

@@ -1,0 +1,84 @@
+extends ./../layout
+
+block main-content
+  form(class="form-horizontal" method="POST" id="register-form")
+    fieldset
+      legend Required information
+
+      .form-group
+        label(class="col-md-4 control-label" for="username") Username
+        .col-md-8
+          input(type="text" class="form-control" id="username"
+            name="username" placeholder="Username" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="firstName") First Name
+        .col-md-8
+          input(type="text" class="form-control" id="firstName"
+            name="firstName" placeholder="First name" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="lastName") Last Name
+        .col-md-8
+          input(type="text" class="form-control" id="lastName"
+            name="lastName" placeholder="Last Name" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="email") Email
+        .col-md-8
+          input(type="email" class="form-control" id="email"
+            name="email" placeholder="Email" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="password") Password
+        .col-md-8
+          input(type="password" class="form-control" id="password"
+            name="password" placeholder="Password" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="confirm-password") Confirm Password
+        .col-md-8
+          input(type="password" class="form-control" id="confirm-password"
+            name="confirmPassword" placeholder="Confirm Password" required="required")
+
+    fieldset
+      legend(id="you-want-me") Additional information
+
+      .form-group
+        label(class="col-md-4 control-label" for="phone-number") Phone number
+        .col-md-8
+          input(type="text" class="form-control" id="phone-number"
+            name="phone" placeholder="Phone number")
+
+      .form-group
+        label(class="col-md-4 control-label" for="facebook") Facebook
+        .col-md-8
+          input(type="url" class="form-control" id="facebook"
+            name="facebook" placeholder="Facebook")
+
+      .form-group
+        label(class="col-md-4 control-label" for="twitter") Twitter
+        .col-md-8
+          input(type="url" class="form-control" id="twitter"
+            name="twitter" placeholder="Twitter")
+
+      .form-group
+        label(class="col-md-4 control-label" for="linkedIn") LinkedIn
+        .col-md-8
+          input(type="url" class="form-control" id="linkedIn"
+            name="linkedIn" placeholder="LinkedIn")
+
+      .form-group
+        label(class="col-md-4 control-label" for="googlePlus") Google+
+        .col-md-8
+          input(type="url" class="form-control" id="googlePlus"
+            name="googlePlus" placeholder="Google+")
+
+      .form-group
+        .col-md-8.col-md-offset-4
+          input(type="submit" value="Register" class="btn btn-primary")
+          button(class="btn btn-default" style="margin-left: 12px" id="add-initiative") Add initiative
+          a(class="btn btn-default" style="margin-left: 12px" href="/") Cancel
+
+block additional-scripts
+  script(src="/js/registration.js")

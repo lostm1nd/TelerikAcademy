@@ -1,0 +1,46 @@
+extends ./../layout
+
+block main-content
+  h2 #{event.title}
+  p= 'Date and time: ' + moment(event.date).format('MMMM Do YYYY, h:mm:ss a')
+
+  if (event.location)
+    p= 'Longitude: ' + event.location.longitude + ', Latitude: ' + event.location.latitude
+
+  if (event.type && event.type.initiative)
+    p= 'Initiative: ' + event.type.initiative
+
+  if (event.type && event.type.season)
+    p= 'Season: ' + event.type.season
+
+  p Created by #{event.creator.username}
+
+  if (event.attendants.length)
+    h3 Attendants
+    table.table.table-striped.table-hover
+      each user in event.attendants
+        tr
+          td= user
+
+  if (event.comments.length)
+    h3 Comments
+    table.table.table-striped.table-hover
+      each comment in event.comments
+        tr
+          td= comment
+
+  form(class="form-horizontal" method="POST")
+    if (isJoined)
+      input(type="text" value="leave" class="hidden" name="eventAction")
+      input(type="submit" value="Leave" class="btn btn-primary")
+    else
+      input(type="text" value="join" class="hidden" name="eventAction")
+      input(type="submit" value="Join" class="btn btn-primary")
+
+  if (isJoined)
+    br
+    br
+    form(class="form-horizontal" method="POST" action="/events/active/#{event._id}/comment")
+      textarea(class="form-control" id="comment"
+        name="comment" placeholder="Leave a comment" required="required")
+      input(type="submit" value="Comment" class="btn btn-primary")

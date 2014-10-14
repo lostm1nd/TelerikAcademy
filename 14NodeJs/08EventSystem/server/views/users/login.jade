@@ -1,0 +1,21 @@
+extends ./../layout
+
+block main-content
+  form(class="form-horizontal" method="POST")
+    fieldset
+      legend Login
+
+      .form-group
+        label(class="col-md-4 control-label" for="email") Email
+        .col-md-8
+          input(type="email" class="form-control" id="email" name="email" placeholder="Email")
+
+      .form-group
+        label(class="col-md-4 control-label" for="password") Password
+        .col-md-8
+          input(type="password" class="form-control" id="password" name="password" placeholder="Password")
+
+      .form-group
+        .col-md-8.col-md-offset-4
+          input(type="submit" value="Login" class="btn btn-primary")
+          a(class="btn btn-default" style="margin-left: 12px" href="/") Cancel

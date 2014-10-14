@@ -1,0 +1,18 @@
+body {
+  padding-bottom: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sticky-footer {
+  color: #999;
+  background-color: #333;
+  border-top: 3px solid #666;
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+}

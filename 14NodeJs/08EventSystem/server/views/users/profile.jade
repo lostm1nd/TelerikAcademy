@@ -1,0 +1,65 @@
+extends ./../layout
+
+block main-content
+  h1= user.firstName + ' ' + user.lastName
+
+  form(class="form-horizontal" method="POST" id="profile-form")
+    fieldset
+      legend Edit information
+
+    .form-group
+        label(class="col-md-4 control-label" for="username") Username
+        .col-md-8
+          input(type="text" class="form-control" id="username" disabled
+            name="username" value="#{user.username}" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="firstName") First Name
+        .col-md-8
+          input(type="text" class="form-control" id="firstName" disabled
+            name="firstName" value="#{user.firstName}" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="lastName") Last Name
+        .col-md-8
+          input(type="text" class="form-control" id="lastName" disabled
+            name="lastName" value="#{user.lastName}" required="required")
+
+      .form-group
+        label(class="col-md-4 control-label" for="phone-number") Phone number
+        .col-md-8
+          input(type="text" class="form-control" id="phone-number" disabled
+            name="phone" value="#{user.phone}")
+
+      .form-group
+        label(class="col-md-4 control-label" for="facebook") Facebook
+        .col-md-8
+          input(type="url" class="form-control" id="facebook" disabled
+            name="social[facebook]" value="#{user.social.facebook || ''}")
+
+      .form-group
+        label(class="col-md-4 control-label" for="twitter") Twitter
+        .col-md-8
+          input(type="url" class="form-control" id="twitter" disabled
+            name="social[twitter]" value="#{user.social.twitter || ''}")
+
+      .form-group
+        label(class="col-md-4 control-label" for="linkedIn") LinkedIn
+        .col-md-8
+          input(type="url" class="form-control" id="linkedIn" disabled
+            name="social[linkedIn]" value="#{user.social.linkedIn || ''}")
+
+      .form-group
+        label(class="col-md-4 control-label" for="googlePlus") Google+
+        .col-md-8
+          input(type="url" class="form-control" id="googlePlus" disabled
+            name="social[googlePlus]" value="#{user.social.googlePlus || ''}")
+
+      .form-group
+        .col-md-8.col-md-offset-4
+          button(class="btn btn-default" id="edit-btn") Edit
+          input(type="submit" value="Save" class="btn btn-primary hidden" id="save-btn")
+          a(class="btn btn-default hidden" style="margin-left: 12px" href="/users/profile" id="cancel-btn") Cancel
+
+block additional-scripts
+  script(src="/js/profile.js")

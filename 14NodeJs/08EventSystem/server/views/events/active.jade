@@ -1,0 +1,28 @@
+extends ./../layout
+
+block main-content
+  h1.text-center Active events
+  table.table.table-striped.table-hover
+    thead
+      if (!activeEvents.length)
+        tr
+          th No active events
+      else
+        tr
+          th Title
+          th Description
+          th Date
+          th Location
+          th Details
+    tbody
+      each event in activeEvents
+        tr
+          td= event.title
+          td= event.description
+          td= moment(event.date).format('MMMM Do YYYY, h:mm:ss a')
+          if (event.location)
+            td= 'Long: ' + event.location.longitude + ' Lat: ' + event.location.latitude
+          else
+            td Not provided
+          td
+            a(class="btn btn-default" href="/events/active/#{event._id}") View

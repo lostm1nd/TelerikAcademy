@@ -1,0 +1,22 @@
+{
+  "name": "NodeJS-Exam",
+  "version": "0.1.0",
+  "authors": [
+    "DY"
+  ],
+  "description": "Let it be good",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-theme-white-plum": "~0.3.0"
+  }
+}
